@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import asyncComponent from './components/AsyncComponent';
+import asyncComponent from 'components/AsyncComponent';
+import Banner from 'containers/Banner';
 const Topic = asyncComponent(() => import('./topic'));
 
 const Home = () =>
@@ -28,6 +29,7 @@ const Topics = ({ match }) =>
 const App = () =>
   <Router>
     <div>
+      <Banner />
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -42,5 +44,6 @@ const App = () =>
       <Route exact path="/" component={Home} />
       <Route path="/topics" component={Topics} />
     </div>
-  </Router>;
+  </Router>
+  ;
 export default App;
