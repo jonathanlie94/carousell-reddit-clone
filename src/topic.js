@@ -8,8 +8,4 @@ const Topic = ({ match }) =>
   </div>;
 
 
-Topic.propTypes = {
-  b: React.PropTypes.string,
-  a: React.PropTypes.string,
-}
 export default Topic;
