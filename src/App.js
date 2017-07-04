@@ -4,16 +4,12 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import asyncComponent from './components/AsyncComponent';
+const Topic = asyncComponent(() => import('./topic'));
 
 const Home = () => (
   <div>
     <h2>Home</h2>
-  </div>
-)
-
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
   </div>
 )
 
@@ -22,7 +18,7 @@ const Topics = ({ match }) => (
     <h2>Topics</h2>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>
+        <Link to={`${match.url}/sampleTopic`}>
           Sample Topic
         </Link>
       </li>
