@@ -30,7 +30,7 @@ class HomePage extends Component {
           }}
         />
         {this.props.posts.map(post =>
-          <div>
+          <div key={`post-${post.id}`}>
             {post.topic}
           </div>
         )}
@@ -40,7 +40,9 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  posts: PropTypes.instanceOf(List),
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    topic: PropTypes.string,
+  })),
 };
 
 const mapStateToProps = state => {
