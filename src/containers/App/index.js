@@ -3,11 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import asyncComponent from 'components/AsyncComponent';
 import Banner from 'containers/Banner';
 const Topic = asyncComponent(() => import('./topic'));
-
-const Home = () =>
-  <div>
-    <h2>Home</h2>
-  </div>;
+const HomePage = asyncComponent(() => import('containers/HomePage'));
 
 const Topics = ({ match }) =>
   <div>
@@ -41,9 +37,8 @@ const App = () =>
 
       <hr />
 
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={HomePage} />
       <Route path="/topics" component={Topics} />
     </div>
-  </Router>
-  ;
+  </Router>;
 export default App;

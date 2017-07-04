@@ -7,5 +7,4 @@ const Topic = ({ match }) =>
     </h3>
   </div>;
 
-
 export default Topic;
