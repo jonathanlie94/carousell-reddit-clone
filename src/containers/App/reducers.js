@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_ERROR } from './constants';
+import { LOAD_TOPICS, LOAD_TOPICS_SUCCESS, LOAD_TOPICS_ERROR } from './constants';
 
 // The initial state of the App.
 // Think of the states here as a global state.
@@ -8,19 +8,19 @@ import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_ERROR } from './constants';
 const initialState = fromJS({
   loading: false,
   error: false,
-  posts: [],
+  topics: {},
 });
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case LOAD_POSTS:
+    case LOAD_TOPICS:
       return state.set('loading', true).set('error', false);
-    case LOAD_POSTS_SUCCESS:
+    case LOAD_TOPICS_SUCCESS:
       return state
-        .set('posts', action.posts)
+        .set('topics', action.topics)
         .set('loading', false)
         .set('error', false);
-    case LOAD_POSTS_ERROR:
+    case LOAD_TOPICS_ERROR:
       return state.set('error', action.error).set('loading', false);
     default:
       return state;

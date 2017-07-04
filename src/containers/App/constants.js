@@ -1,3 +1,3 @@
-export const LOAD_POSTS = 'containers/App/LOAD_POSTS';
-export const LOAD_POSTS_SUCCESS = 'containers/App/LOAD_POSTS_SUCCESS';
-export const LOAD_POSTS_ERROR = 'containers/App/LOAD_POSTS_ERROR';
+export const LOAD_TOPICS = 'containers/App/LOAD_TOPICS';
+export const LOAD_TOPICS_SUCCESS = 'containers/App/LOAD_TOPICS_SUCCESS';
+export const LOAD_TOPICS_ERROR = 'containers/App/LOAD_TOPICS_ERROR';

@@ -10,19 +10,18 @@ import idTranslationMessages from './translations/id.json';
 addLocaleData(enLocaleData);
 addLocaleData(idLocaleData);
 
-export const appLocales = [
-  'en',
-  'id',
-];
+export const appLocales = ['en', 'id'];
 
 export const formatTranslationMessages = (locale, messages) => {
-  const defaultFormattedMessages = locale !== DEFAULT_LOCALE
-    ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
-    : {};
+  const defaultFormattedMessages =
+    locale !== DEFAULT_LOCALE
+      ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
+      : {};
   return Object.keys(messages).reduce((formattedMessages, key) => {
-    const formattedMessage = !messages[key] && locale !== DEFAULT_LOCALE
-      ? defaultFormattedMessages[key]
-      : messages[key];
+    const formattedMessage =
+      !messages[key] && locale !== DEFAULT_LOCALE
+        ? defaultFormattedMessages[key]
+        : messages[key];
     return Object.assign(formattedMessages, { [key]: formattedMessage });
   }, {});
 };

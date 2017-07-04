@@ -12,13 +12,19 @@ class LanguageProvider extends PureComponent {
 
   render() {
     return (
-      <IntlProvider locale={this.props.locale} key={this.props.locale} messages={this.props.messages[this.props.locale]}>
+      <IntlProvider
+        locale={this.props.locale}
+        key={this.props.locale}
+        messages={this.props.messages[this.props.locale]}
+      >
         {React.Children.only(this.props.children)}
       </IntlProvider>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => ({ locale: state.get('language').get('locale') })
+const mapStateToProps = state => ({
+  locale: state.get('language').get('locale'),
+});
 
 export default connect(mapStateToProps)(LanguageProvider);
