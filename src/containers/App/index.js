@@ -24,25 +24,27 @@ const Topics = ({ match }) =>
   </div>;
 
 const App = (props) =>
-  <Router>
-    <LanguageProvider messages={props.messages}>
-      <div>
-        <Banner />
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
+  <LanguageProvider messages={props.messages}>
+    <Router>
 
-        <hr />
+        <div>
+          <Banner />
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/topics">Topics</Link>
+            </li>
+          </ul>
 
-        <Route exact path="/" component={HomePage} />
-        <Route path="/topics" component={Topics} />
-      </div>
-    </LanguageProvider>
-  </Router>;
+          <hr />
+
+          <Route exact path="/" component={HomePage} />
+          <Route path="/topics" component={Topics} />
+        </div>
+
+    </Router>
+  </LanguageProvider>;
 
 export default App;
