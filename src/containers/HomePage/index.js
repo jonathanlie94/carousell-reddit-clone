@@ -5,7 +5,7 @@ import { fetchTopics } from 'containers/App/actions';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Link, withRouter } from 'react-router-dom';
 import { List } from 'immutable';
-import moment from 'moment';
+import { ListItem, ScrollToTopOnMount, TopicListContent } from 'components';
 import messages from './messages';
 
 class HomePage extends Component {
@@ -19,22 +19,19 @@ class HomePage extends Component {
 
     return (
       <div>
-        <FormattedMessage
+        <ScrollToTopOnMount />
+        {/* <FormattedMessage
           {...messages.homeText}
           values={{
             name: <b>Eric</b>,
             unreadCount: 11,
           }}
-        />
+        /> */}
         {this.props.topics.map(topic => {
           return (
-            <Link
-              key={`topic-${topic.get('id')}`}
-              to={`/topics/${topic.get('id')}`}
-            >
-              {topic.get('title')}
-              {moment(topic.get('created_at')).fromNow()}
-            </Link>
+            <ListItem key={`topic-${topic.get('id')}`}>
+              <TopicListContent topic={topic} />
+            </ListItem>
           );
         })}
       </div>

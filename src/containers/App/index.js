@@ -4,6 +4,7 @@ import asyncComponent from 'components/AsyncComponent';
 import { Banner, Header, MainContainer, SideContainer } from 'components';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
+import { theme } from 'ui';
 const TopicsPage = asyncComponent(() => import('containers/TopicsPage'));
 const HomePage = asyncComponent(() => import('containers/HomePage'));
 const SubmitPage = asyncComponent(() => import('containers/SubmitPage'));
@@ -11,6 +12,7 @@ const SubmitPage = asyncComponent(() => import('containers/SubmitPage'));
 const Wrapper = styled.div`min-width: 768px;`;
 
 const ContentWrapper = styled.div`
+  background-color: ${theme.colors.grey};
   display: flex;
   flex-direction: row;
 `;

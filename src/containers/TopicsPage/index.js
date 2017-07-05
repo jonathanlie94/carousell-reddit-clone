@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { theme } from 'ui';
 import { connect } from 'react-redux';
 import { fetchTopic } from 'containers/App/actions';
-import { selectTopic } from './actions';
 import { withRouter } from 'react-router-dom';
+import { ScrollToTopOnMount } from 'components';
+import { selectTopic } from './actions';
 
 const Wrapper = styled.div`color: ${theme.colors.blue};`;
 
@@ -17,6 +18,7 @@ class TopicsPage extends Component {
   render() {
     return (
       <Wrapper>
+        <ScrollToTopOnMount />
         {`${this.props.topic && this.props.topic.get('title')}`}
       </Wrapper>
     );
