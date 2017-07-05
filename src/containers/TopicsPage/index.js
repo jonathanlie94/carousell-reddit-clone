@@ -4,35 +4,45 @@ import { theme } from 'ui';
 import { connect } from 'react-redux';
 import { fetchTopic } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
-import { ScrollToTopOnMount } from 'components';
+import { ScrollToTopOnMount, ListItem, TopicDetailContent } from 'components';
+import Helmet from 'react-helmet';
 import { selectTopic } from './actions';
+import { Map } from 'immutable';
 
 const Wrapper = styled.div`color: ${theme.colors.blue};`;
 
 class TopicsPage extends Component {
-  componentWillMount() {
-    this.props.selectTopic(this.props.match.params.id);
-    this.props.fetchTopic(this.props.match.params.id);
+  componentDidMount() {
+    this.props.fetchTopic(Number(this.props.match.params.id));
+    this.props.selectTopic(Number(this.props.match.params.id));
   }
 
   render() {
     return (
       <Wrapper>
         <ScrollToTopOnMount />
-        {`${this.props.topic && this.props.topic.get('title')}`}
+        <Helmet>
+          <title>{`${this.props.topic &&
+            this.props.topic.get('title')}`}</title>
+        </Helmet>
+        <ListItem>
+          <TopicDetailContent topic={this.props.topic} />
+        </ListItem>
       </Wrapper>
     );
   }
 }
 
-const mapStateToProps = state => {
+function mapStateToProps(state) {
   return {
-    topic: state
-      .get('app')
-      .get('topics')
-      .get(state.get('topicsPage').get('selectedTopicId')),
+    topic: Map(
+      state
+        .get('app')
+        .get('topics')
+        .get(state.get('topicsPage').get('selectedTopicId'))
+    ),
   };
-};
+}
 
 const mapDispatchToProps = dispatch => ({
   selectTopic: id => dispatch(selectTopic(id)),

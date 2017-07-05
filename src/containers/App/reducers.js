@@ -31,7 +31,10 @@ function appReducer(state = initialState, action) {
     case LOAD_TOPICS_ERROR:
       return state.set('error', action.error).set('loading', false);
     case LOAD_TOPIC_SUCCESS:
-      return state.mergeIn(['topics'], state.get('topics').merge(action.topic));
+      return state.mergeIn(
+        ['topics'],
+        state.get('topics').set(action.topic.id, action.topic)
+      );
     case LOAD_TOPIC_ERROR:
       return state.set('error', action.error).set('loading', false);
     default:

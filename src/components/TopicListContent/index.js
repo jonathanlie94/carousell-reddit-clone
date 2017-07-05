@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Map } from 'immutable';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 import { theme } from 'ui';
+import { FormattedRelative } from 'react-intl';
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ class TopicListContent extends PureComponent {
           {this.props.topic.get('title')}
         </StyledLink>
         <Time>
-          {moment(this.props.topic.get('created_at')).fromNow()}
+          <FormattedRelative value={this.props.topic.get('created_at')} />
         </Time>
       </Wrapper>
     );
