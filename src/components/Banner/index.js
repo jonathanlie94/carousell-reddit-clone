@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
 
-const StyledDiv = styled.div`
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.accent};
-  display: flex;
-`;
-
-const StyledImg = styled.img`
+const Wrapper = styled.div`
+  background-color: ${theme.colors.blue};
+  background-image: ${(props) => `url(${props.image})`};
+  background-size: cover;
+  color: ${theme.colors.grey};
   width: 100%;
-  height: 200px;
+  height: 250px;
 `;
 
 class Banner extends Component {
   render() {
     return (
-      <StyledDiv>
-        <StyledImg src="logo.svg" />
-      </StyledDiv>
+      <Wrapper image="banner.jpg">
+        {this.props.children}
+      </Wrapper>
     );
   }
 }
