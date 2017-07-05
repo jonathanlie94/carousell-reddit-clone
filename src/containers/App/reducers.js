@@ -1,6 +1,10 @@
 import { fromJS } from 'immutable';
 
-import { LOAD_TOPICS, LOAD_TOPICS_SUCCESS, LOAD_TOPICS_ERROR } from './constants';
+import {
+  LOAD_TOPICS,
+  LOAD_TOPICS_SUCCESS,
+  LOAD_TOPICS_ERROR,
+} from './constants';
 
 // The initial state of the App.
 // Think of the states here as a global state.

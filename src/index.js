@@ -3,21 +3,25 @@ import ReactDOM from 'react-dom';
 import store from 'reducers';
 import 'normalize-css';
 import 'ui/global';
-
-import App from './containers/App';
-import registerServiceWorker from './registerServiceWorker';
+import LanguageProvider from 'language/LanguageProvider';
 import { Provider } from 'react-redux';
 import { translationMessages } from 'language/i18n';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './containers/App';
+import registerServiceWorker from './registerServiceWorker';
 
 const render = messages =>
   ReactDOM.render(
     <Provider store={store}>
-      <App messages={messages} />
+      <LanguageProvider messages={messages}>
+        <Router>
+          <App />
+        </Router>
+      </LanguageProvider>
     </Provider>,
     document.getElementById('root')
   );
 
-registerServiceWorker();
 // Chunked polyfill for browsers without Intl support
 if (!window.Intl) {
   new Promise(resolve => {

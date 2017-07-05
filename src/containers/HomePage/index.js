@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
 import { injectIntl, FormattedMessage } from 'react-intl';
+import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 import messages from './messages';
 
@@ -22,10 +23,13 @@ class HomePage extends Component {
           }}
         />
         {this.props.topics.map(topic =>
-          <div key={`topic-${topic.title}`}>
+          <Link
+            key={`topic-${topic.title}`}
+            to={`/topics/${topic.id}`}
+          >
             {topic.title}
             {moment(topic.created_at).fromNow()}
-          </div>
+          </Link>
         )}
       </div>
     );
@@ -53,6 +57,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  injectIntl(HomePage)
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomePage))
 );

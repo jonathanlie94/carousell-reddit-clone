@@ -1,4 +1,8 @@
-import { LOAD_TOPICS, LOAD_TOPICS_SUCCESS, LOAD_TOPICS_ERROR } from './constants';
+import {
+  LOAD_TOPICS,
+  LOAD_TOPICS_SUCCESS,
+  LOAD_TOPICS_ERROR,
+} from './constants';
 import sampleData from './sampleData';
 
 export function loadTopics() {
