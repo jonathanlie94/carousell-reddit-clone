@@ -4,6 +4,9 @@ import {
   LOAD_TOPICS,
   LOAD_TOPICS_SUCCESS,
   LOAD_TOPICS_ERROR,
+  LOAD_TOPIC,
+  LOAD_TOPIC_SUCCESS,
+  LOAD_TOPIC_ERROR,
 } from './constants';
 
 // The initial state of the App.
@@ -18,13 +21,18 @@ const initialState = fromJS({
 function appReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_TOPICS:
+    case LOAD_TOPIC:
       return state.set('loading', true).set('error', false);
     case LOAD_TOPICS_SUCCESS:
       return state
-        .set('topics', action.topics)
+        .setIn(['topics'], state.get('topics').merge(action.topics))
         .set('loading', false)
         .set('error', false);
     case LOAD_TOPICS_ERROR:
+      return state.set('error', action.error).set('loading', false);
+    case LOAD_TOPIC_SUCCESS:
+      return state.mergeIn(['topics'], state.get('topics').merge(action.topic));
+    case LOAD_TOPIC_ERROR:
       return state.set('error', action.error).set('loading', false);
     default:
       return state;

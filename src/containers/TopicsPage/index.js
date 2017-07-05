@@ -1,20 +1,42 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
+import { connect } from 'react-redux';
+import { fetchTopic } from 'containers/App/actions';
+import { selectTopic } from './actions';
+import { withRouter } from 'react-router-dom';
 
-const Wrapper = styled.div`
-  color: ${theme.colors.blue}
-`;
-
+const Wrapper = styled.div`color: ${theme.colors.blue};`;
 
 class TopicsPage extends Component {
+  componentWillMount() {
+    this.props.selectTopic(this.props.match.params.id);
+    this.props.fetchTopic(this.props.match.params.id);
+  }
+
   render() {
     return (
       <Wrapper>
-        {this.props.match.params.id}
+        {`${this.props.topic && this.props.topic.get('title')}`}
       </Wrapper>
     );
   }
 }
 
-export default TopicsPage;
+const mapStateToProps = state => {
+  return {
+    topic: state
+      .get('app')
+      .get('topics')
+      .get(state.get('topicsPage').get('selectedTopicId')),
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  selectTopic: id => dispatch(selectTopic(id)),
+  fetchTopic: id => dispatch(fetchTopic(id)),
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(TopicsPage)
+);

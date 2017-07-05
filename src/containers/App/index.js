@@ -33,8 +33,8 @@ const App = props =>
       <MainContainer>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/:id" component={TopicsPage} />
-          <Route path="/new" component={SubmitPage} />
+          <Route path="/topics/:id" component={TopicsPage} />
+          <Route path="/topics/new" component={SubmitPage} />
         </Switch>
       </MainContainer>
 

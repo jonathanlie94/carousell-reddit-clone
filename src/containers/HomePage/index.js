@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Link, withRouter } from 'react-router-dom';
+import { List } from 'immutable';
 import moment from 'moment';
 import messages from './messages';
 
@@ -13,6 +14,9 @@ class HomePage extends Component {
   }
 
   render() {
+    const topics = this.props.topics;
+    console.log(topics);
+
     return (
       <div>
         <FormattedMessage
@@ -22,15 +26,17 @@ class HomePage extends Component {
             unreadCount: 11,
           }}
         />
-        {this.props.topics.map(topic =>
-          <Link
-            key={`topic-${topic.title}`}
-            to={`/topics/${topic.id}`}
-          >
-            {topic.title}
-            {moment(topic.created_at).fromNow()}
-          </Link>
-        )}
+        {this.props.topics.map(topic => {
+          return (
+            <Link
+              key={`topic-${topic.get('id')}`}
+              to={`/topics/${topic.get('id')}`}
+            >
+              {topic.get('title')}
+              {moment(topic.get('created_at')).fromNow()}
+            </Link>
+          );
+        })}
       </div>
     );
   }
@@ -38,16 +44,16 @@ class HomePage extends Component {
 
 HomePage.propTypes = {
   intl: PropTypes.object.isRequired,
-  topics: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-    })
-  ),
+  topics: PropTypes.instanceOf(List),
 };
 
 const mapStateToProps = state => {
   return {
-    topics: state.get('app').get('topics'),
+    topics: List(
+      state.get('homePage').get('topicIds').map(id => {
+        return state.get('app').get('topics').get(id);
+      })
+    ),
   };
 };
 
