@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 let idCounter = 20;
 let data = {
   1: {
@@ -7,7 +5,7 @@ let data = {
     title: 'Today teaser date showed up in Orisa trailer.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
-    created_at: moment(),
+    created_at: new Date(2017, 1, 31),
     votes: 583,
   },
   2: {
@@ -15,7 +13,7 @@ let data = {
     title: 'The 45 sec time in Mystery Heroes mode is absurd.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
-    created_at: moment(),
+    created_at: new Date(2017, 1, 31),
     votes: 221,
   },
   3: {
@@ -23,7 +21,7 @@ let data = {
     title: 'Today we are likely to get a Doomfist teaser.',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
-    created_at: moment(),
+    created_at: new Date(2017, 1, 31),
     votes: 21,
   },
   4: {
@@ -33,7 +31,7 @@ let data = {
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
-    created_at: moment(),
+    created_at: new Date(2017, 1, 31),
     votes: 88,
   },
   5: {
@@ -41,7 +39,7 @@ let data = {
     title: 'Today teaser date showed up in Orisa trailer.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
-    created_at: moment(),
+    created_at: new Date(2017, 2, 25),
     votes: 4908,
   },
   6: {
@@ -49,7 +47,7 @@ let data = {
     title: 'The 45 sec time in Mystery Heroes mode is absurd.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
-    created_at: moment(),
+    created_at: new Date(2017, 2, 25),
     votes: 223,
   },
   7: {
@@ -57,7 +55,7 @@ let data = {
     title: 'Today we are likely to get a Doomfist teaser.',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
-    created_at: moment(),
+    created_at: new Date(2017, 2, 25),
     votes: 0,
   },
   8: {
@@ -67,7 +65,7 @@ let data = {
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
-    created_at: moment(),
+    created_at: new Date(2017, 2, 28),
     votes: 6622,
   },
   9: {
@@ -75,7 +73,7 @@ let data = {
     title: 'Today teaser date showed up in Orisa trailer.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
-    created_at: moment(),
+    created_at: new Date(2017, 2, 28),
     votes: 523,
   },
   10: {
@@ -83,7 +81,7 @@ let data = {
     title: 'The 45 sec time in Mystery Heroes mode is absurd.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
-    created_at: moment(),
+    created_at: new Date(2017, 3, 28),
     votes: 5543,
   },
   11: {
@@ -91,7 +89,7 @@ let data = {
     title: 'Today we are likely to get a Doomfist teaser.',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
-    created_at: moment(),
+    created_at: new Date(2017, 3, 28),
     votes: 552,
   },
   12: {
@@ -101,7 +99,7 @@ let data = {
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
-    created_at: moment(),
+    created_at: new Date(2017, 3, 20),
     votes: 5234,
   },
   13: {
@@ -109,7 +107,7 @@ let data = {
     title: 'Today teaser date showed up in Orisa trailer.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
-    created_at: moment(),
+    created_at: new Date(2017, 4, 20),
     votes: 1234,
   },
   14: {
@@ -117,7 +115,7 @@ let data = {
     title: 'The 45 sec time in Mystery Heroes mode is absurd.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
-    created_at: moment(),
+    created_at: new Date(2017, 4, 20),
     votes: 523,
   },
   15: {
@@ -125,7 +123,7 @@ let data = {
     title: 'Today we are likely to get a Doomfist teaser.',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
-    created_at: moment(),
+    created_at: new Date(2017, 4, 30),
     votes: 6623,
   },
   16: {
@@ -135,7 +133,7 @@ let data = {
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
-    created_at: moment(),
+    created_at: new Date(2017, 5, 18),
     votes: 5,
   },
   17: {
@@ -143,7 +141,7 @@ let data = {
     title: 'Today teaser date showed up in Orisa trailer.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
-    created_at: moment(),
+    created_at: new Date(2017, 5, 20),
     votes: 10,
   },
   18: {
@@ -151,7 +149,7 @@ let data = {
     title: 'The 45 sec time in Mystery Heroes mode is absurd.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
-    created_at: moment(),
+    created_at: new Date(2017, 5, 28),
     votes: 16,
   },
   19: {
@@ -159,7 +157,7 @@ let data = {
     title: 'Today we are likely to get a Doomfist teaser.',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
-    created_at: moment(),
+    created_at: new Date(2017, 5, 29),
     votes: 71,
   },
   20: {
@@ -169,7 +167,7 @@ let data = {
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
-    created_at: moment(),
+    created_at: new Date(2017, 6, 1, 23),
     votes: 2,
   },
 };
@@ -197,7 +195,6 @@ export const getDataList = (page, per_page = 20) => {
 
 // Similar to show, more details are loaded here.
 export const getData = id => {
-  console.log(data[id]);
   return data[id];
 };
 
@@ -208,7 +205,7 @@ export const create = (title, description) => {
     id: idCounter,
     title,
     description,
-    created_at: moment(),
+    created_at: new Date(),
     votes: 0,
   };
 
