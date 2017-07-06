@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
 import { List } from 'immutable';
-import { ListItem, ScrollToTopOnMount, TopicListContent } from 'components';
+import {
+  ListItem,
+  ScrollToTopOnMount,
+  TopicListContent,
+  ListView,
+} from 'components';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -15,13 +20,15 @@ class HomePage extends Component {
     return (
       <div>
         <ScrollToTopOnMount />
-        {this.props.topics.map(topic => {
-          return (
-            <ListItem key={`topic-${topic.get('id')}`}>
-              <TopicListContent topic={topic} />
-            </ListItem>
-          );
-        })}
+        <ListView>
+          {this.props.topics.map(topic => {
+            return (
+              <ListItem key={`topic-${topic.get('id')}`}>
+                <TopicListContent topic={topic} />
+              </ListItem>
+            );
+          })}
+        </ListView>
       </div>
     );
   }
