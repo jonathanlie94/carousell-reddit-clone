@@ -13,6 +13,8 @@ export default {
     regular: '1rem',
     regularL: '1.25rem',
     large: '1.5rem',
+    largeX: '2rem',
+    largeXX: '2.5rem',
   },
   margins: {
     smallX: '0.25rem',

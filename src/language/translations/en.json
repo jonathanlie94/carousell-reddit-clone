@@ -1,3 +1,5 @@
 {
-  "components.TopicTime.text": "Submitted {relativeTime}"
+  "components.TopicTime.text": "Submitted {relativeTime}",
+  "containers.SideSubmit.title": "Submit Content",
+  "containerse.SideSubmit.postButton": "Post"
 }

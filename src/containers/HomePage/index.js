@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import { List } from 'immutable';
+import styled from 'styled-components';
+import SideSubmit from 'containers/SideSubmit';
 import {
   ListItem,
   ScrollToTopOnMount,
@@ -13,6 +15,7 @@ import {
   MainContainer,
   SideContainer,
 } from 'components';
+import { theme } from 'ui';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -36,9 +39,7 @@ class HomePage extends Component {
         </MainContainer>
 
         <SideContainer>
-          <ListView>
-            <ListItem />
-          </ListView>
+          <SideSubmit />
         </SideContainer>
       </RootContainer>
     );
