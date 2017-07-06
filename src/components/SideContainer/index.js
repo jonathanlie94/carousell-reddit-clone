@@ -24,6 +24,6 @@ class SideContainer extends Component {
 SideContainer.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-}
+};
 
 export default SideContainer;

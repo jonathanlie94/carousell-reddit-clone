@@ -25,6 +25,6 @@ class MainContainer extends Component {
 MainContainer.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-}
+};
 
 export default MainContainer;

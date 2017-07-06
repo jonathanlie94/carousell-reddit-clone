@@ -22,6 +22,6 @@ class RootContainer extends Component {
 RootContainer.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-}
+};
 
 export default RootContainer;

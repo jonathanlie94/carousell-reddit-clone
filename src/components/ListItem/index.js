@@ -23,6 +23,6 @@ class ListItem extends Component {
 ListItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-}
+};
 
 export default ListItem;
