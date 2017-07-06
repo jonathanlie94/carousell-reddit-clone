@@ -21,10 +21,12 @@ class TopicsPage extends Component {
     return (
       <Wrapper>
         <ScrollToTopOnMount />
-        <Helmet>
-          <title>{`${this.props.topic &&
-            this.props.topic.get('title')}`}</title>
-        </Helmet>
+        {this.props.topic && this.props.topic.get('title')
+          ? <Helmet>
+              <title>{`${this.props.topic &&
+                this.props.topic.get('title')}`}</title>
+            </Helmet>
+          : false}
         <ListItem>
           <TopicDetailContent topic={this.props.topic} />
         </ListItem>
