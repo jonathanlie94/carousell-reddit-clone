@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
-import { injectIntl, FormattedMessage } from 'react-intl';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { List } from 'immutable';
 import { ListItem, ScrollToTopOnMount, TopicListContent } from 'components';
-import messages from './messages';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -14,19 +12,9 @@ class HomePage extends Component {
   }
 
   render() {
-    const topics = this.props.topics;
-    console.log(topics);
-
     return (
       <div>
         <ScrollToTopOnMount />
-        {/* <FormattedMessage
-          {...messages.homeText}
-          values={{
-            name: <b>Eric</b>,
-            unreadCount: 11,
-          }}
-        /> */}
         {this.props.topics.map(topic => {
           return (
             <ListItem key={`topic-${topic.get('id')}`}>
@@ -40,7 +28,6 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  intl: PropTypes.object.isRequired,
   topics: PropTypes.instanceOf(List),
 };
 
@@ -61,5 +48,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomePage))
+  connect(mapStateToProps, mapDispatchToProps)(HomePage)
 );
