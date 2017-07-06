@@ -5,6 +5,7 @@ import { Banner, Header, MainContainer, SideContainer } from 'components';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import { theme } from 'ui';
+const PageNotFound = asyncComponent(() => import('components/PageNotFound'));
 const TopicsPage = asyncComponent(() => import('containers/TopicsPage'));
 const HomePage = asyncComponent(() => import('containers/HomePage'));
 const SubmitPage = asyncComponent(() => import('containers/SubmitPage'));
@@ -37,11 +38,13 @@ const App = props =>
           <Route exact path="/" component={HomePage} />
           <Route path="/topics/:id" component={TopicsPage} />
           <Route path="/topics/new" component={SubmitPage} />
+          <Route component={PageNotFound} />
         </Switch>
       </MainContainer>
 
       <SideContainer />
     </ContentWrapper>
+
   </Wrapper>;
 
 export default App;
