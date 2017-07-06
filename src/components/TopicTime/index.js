@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 class TopicTime extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className={this.props.className}>
         <FormattedMessage
           {...messages.text}
           values={{
@@ -29,6 +29,8 @@ class TopicTime extends Component {
 }
 
 TopicTime.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
   value: PropTypes.instanceOf(Date),
 };
 

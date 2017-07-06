@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   background-color: ${theme.colors.grey};
@@ -13,11 +14,16 @@ const Wrapper = styled.div`
 class SideContainer extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className={this.props.className}>
         {this.props.children}
       </Wrapper>
     );
   }
+}
+
+SideContainer.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default SideContainer;

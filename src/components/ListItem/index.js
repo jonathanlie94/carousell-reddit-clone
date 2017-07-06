@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   background-color: ${theme.colors.white};
@@ -12,11 +13,16 @@ const Wrapper = styled.div`
 class ListItem extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className={this.props.className}>
         {this.props.children}
       </Wrapper>
     );
   }
+}
+
+ListItem.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default ListItem;
