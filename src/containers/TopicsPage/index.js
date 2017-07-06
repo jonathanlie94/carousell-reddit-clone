@@ -13,8 +13,9 @@ import {
   SideContainer,
 } from 'components';
 import Helmet from 'react-helmet';
-import { selectTopic } from './actions';
+import SideSubmit from 'containers/SideSubmit';
 import { Map } from 'immutable';
+import { selectTopic } from './actions';
 
 class TopicsPage extends Component {
   componentDidMount() {
@@ -42,9 +43,7 @@ class TopicsPage extends Component {
         </MainContainer>
 
         <SideContainer>
-          <ListView>
-            <ListItem />
-          </ListView>
+          <SideSubmit />
         </SideContainer>
       </RootContainer>
     );
