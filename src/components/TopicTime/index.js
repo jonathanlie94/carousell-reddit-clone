@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { theme } from 'ui';
 import messages from './messages';
-import { injectIntl, FormattedRelative, FormattedMessage } from 'react-intl';
+import { FormattedRelative, FormattedMessage } from 'react-intl';
 
 const Wrapper = styled.div`
   color: ${theme.colors.grey};
@@ -30,7 +30,6 @@ class TopicTime extends Component {
 
 TopicTime.propTypes = {
   value: PropTypes.instanceOf(Date),
-  intl: PropTypes.object.isRequired,
 };
 
-export default injectIntl(TopicTime);
+export default TopicTime;
