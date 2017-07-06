@@ -1,1 +1,1 @@
-export const SELECT_TOPIC = 'containers/HomePage/SELECT_TOPIC';
+export const SELECT_TOPIC = 'containers/TopicsPage/SELECT_TOPIC';

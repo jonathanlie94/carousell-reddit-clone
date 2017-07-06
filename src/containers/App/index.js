@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import asyncComponent from 'components/AsyncComponent';
-import { Banner, Header, MainContainer, SideContainer } from 'components';
+import { Banner, Header } from 'components';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
-import { theme } from 'ui';
 const PageNotFound = asyncComponent(() => import('components/PageNotFound'));
 const TopicsPage = asyncComponent(() => import('containers/TopicsPage'));
 const HomePage = asyncComponent(() => import('containers/HomePage'));
@@ -28,8 +27,8 @@ const App = props =>
 
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/topics/submit" component={SubmitPage} />
       <Route path="/topics/:id" component={TopicsPage} />
-      <Route path="/topics/new" component={SubmitPage} />
       <Route component={PageNotFound} />
     </Switch>
   </Wrapper>;

@@ -20,8 +20,12 @@ function homePageReducer(state = initialState, action) {
       return currentPage > 1 ? state.set('page', state.get('page') - 1) : state;
     case LOAD_TOPICS_SUCCESS:
       return state
-        .set('topicIds', Object.keys(action.topics).sort((a, b) => b - a))
-        .set('total', action.meta.total);
+        .set('topicIds',
+          action.topics
+          .map(t => t.get('id'))
+          .sortBy((item, key) => -Number(key))
+          .toList())
+        .set('total', action.meta.get('total'));
     default:
       return state;
   }

@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTopics } from 'containers/App/actions';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { List } from 'immutable';
-import styled from 'styled-components';
 import SideSubmit from 'containers/SideSubmit';
 import {
   ListItem,
@@ -15,7 +14,6 @@ import {
   MainContainer,
   SideContainer,
 } from 'components';
-import { theme } from 'ui';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -28,10 +26,10 @@ class HomePage extends Component {
         <ScrollToTopOnMount />
         <MainContainer>
           <ListView>
-            {this.props.topics.map(topic => {
+            {this.props.topics.map((val, key) => {
               return (
-                <ListItem key={`topic-${topic.get('id')}`}>
-                  <TopicListContent topic={topic} />
+                <ListItem key={`topic-${key}`}>
+                  <TopicListContent topic={val} />
                 </ListItem>
               );
             })}
@@ -51,12 +49,10 @@ HomePage.propTypes = {
 };
 
 const mapStateToProps = state => {
+  const topicIds = state.get('homePage').get('topicIds');
+  console.log(topicIds);
   return {
-    topics: List(
-      state.get('homePage').get('topicIds').map(id => {
-        return state.get('app').get('topics').get(id);
-      })
-    ),
+    topics: topicIds.map(id => state.get('app').get('topics').get(`${id}`)),
   };
 };
 

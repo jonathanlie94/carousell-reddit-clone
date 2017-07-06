@@ -7,6 +7,7 @@ import {
   LOAD_TOPIC_ERROR,
 } from './constants';
 import { getDataList, getData } from 'utils/sampleDataManager';
+import { fromJS } from 'immutable';
 
 const FAKE_TIMEOUT = 500;
 
@@ -23,7 +24,7 @@ export function fetchTopics(page, per_page) {
     dispatch(loadTopics());
     setTimeout(() => {
       const data = getDataList(page, per_page);
-      dispatch(topicsLoaded(data));
+      dispatch(topicsLoaded(fromJS(data)));
     }, FAKE_TIMEOUT);
   };
 }
@@ -31,8 +32,8 @@ export function fetchTopics(page, per_page) {
 export function topicsLoaded(data) {
   return {
     type: LOAD_TOPICS_SUCCESS,
-    topics: data.topics,
-    meta: data.meta,
+    topics: data.get('topics'),
+    meta: data.get('meta'),
   };
 }
 
@@ -57,7 +58,7 @@ export function fetchTopic(id) {
     setTimeout(() => {
       const data = getData(id);
       if (data) {
-        dispatch(topicLoaded(data));
+        dispatch(topicLoaded(fromJS(data)));
       } else {
         dispatch(loadTopicError('Topic not Found!'));
       }

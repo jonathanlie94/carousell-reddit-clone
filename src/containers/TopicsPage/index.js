@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { fetchTopic } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
@@ -14,7 +13,6 @@ import {
 } from 'components';
 import Helmet from 'react-helmet';
 import SideSubmit from 'containers/SideSubmit';
-import { Map } from 'immutable';
 import { selectTopic } from './actions';
 
 class TopicsPage extends Component {
@@ -52,12 +50,10 @@ class TopicsPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    topic: Map(
-      state
+    topic: state
         .get('app')
         .get('topics')
-        .get(state.get('topicsPage').get('selectedTopicId'))
-    ),
+        .get(state.get('topicsPage').get('selectedTopicId')),
   };
 }
 
