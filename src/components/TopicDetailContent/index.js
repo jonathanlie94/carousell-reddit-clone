@@ -2,46 +2,41 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Map } from 'immutable';
-import { Link } from 'react-router-dom';
 import { theme } from 'ui';
-import { FormattedRelative } from 'react-intl';
+import TopicTime from '../TopicTime';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+
 `;
 
-const StyledLink = styled(Link)`
+const Title = styled.div`
   font-style: normal;
   text-decoration: none;
   color: ${theme.colors.blue};
 `;
 
-const Description = styled.div`
-  margin-top: ${theme.fontSizes.regular};
-  font-style: ${theme.fontSizes.regular};
-  color: ${theme.colors.darkergrey};
+const StyledTopicTime = styled(TopicTime)`
+  margin-top: 1rem;
 `;
 
-const Time = styled.div`
-  margin-top: ${theme.fontSizes.small};
-  font-size: ${theme.fontSizes.small};
+const Description = styled.div`
+  margin: ${theme.margins.regular} 0;
+  font-style: ${theme.fontSizes.regular};
+  color: ${theme.colors.darkergrey};
 `;
 
 class TopicDetailContent extends Component {
   render() {
     return this.props.topic
       ? <Wrapper>
-          <StyledLink to={`/topics/${this.props.topic.get('id')}`}>
+          <Title>
             {this.props.topic && this.props.topic.get('title')}
-          </StyledLink>
+          </Title>
           <Description>
             {this.props.topic && this.props.topic.get('description')}
           </Description>
           {this.props.topic && this.props.topic.get('created_at')
-            ? <Time>
-                <FormattedRelative value={this.props.topic.get('created_at')} />
-              </Time>
+            ? <StyledTopicTime value={this.props.topic.get('created_at')} />
             : false}
         </Wrapper>
       : false;

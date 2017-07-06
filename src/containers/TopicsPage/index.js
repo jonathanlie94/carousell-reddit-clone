@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { theme } from 'ui';
 import { connect } from 'react-redux';
 import { fetchTopic } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
@@ -9,7 +8,7 @@ import Helmet from 'react-helmet';
 import { selectTopic } from './actions';
 import { Map } from 'immutable';
 
-const Wrapper = styled.div`color: ${theme.colors.blue};`;
+const Wrapper = styled.div``;
 
 class TopicsPage extends Component {
   componentDidMount() {

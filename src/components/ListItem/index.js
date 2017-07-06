@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   background-color: ${theme.colors.white};
   border-bottom: 1px solid ${theme.colors.grey};
   min-height: 4rem;
-  padding: 12px;
+  padding: 16px;
 `;
 
 class ListItem extends Component {

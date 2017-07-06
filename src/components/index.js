@@ -8,3 +8,4 @@ export { default as ScrollToTopOnMount } from './ScrollToTopOnMount';
 export { default as SideContainer } from './SideContainer';
 export { default as TopicDetailContent } from './TopicDetailContent';
 export { default as TopicListContent } from './TopicListContent';
+export { default as TopicTime } from './TopicTime';
