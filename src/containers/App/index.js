@@ -44,7 +44,6 @@ const App = props =>
 
       <SideContainer />
     </ContentWrapper>
-
   </Wrapper>;
 
 export default App;

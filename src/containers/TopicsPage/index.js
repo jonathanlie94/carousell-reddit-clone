@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { fetchTopic } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
-import { ScrollToTopOnMount, ListItem, TopicDetailContent } from 'components';
+import {
+  ScrollToTopOnMount,
+  ListItem,
+  TopicDetailContent,
+  ListView,
+} from 'components';
 import Helmet from 'react-helmet';
 import { selectTopic } from './actions';
 import { Map } from 'immutable';
@@ -26,9 +31,11 @@ class TopicsPage extends Component {
                 this.props.topic.get('title')}`}</title>
             </Helmet>
           : false}
-        <ListItem>
-          <TopicDetailContent topic={this.props.topic} />
-        </ListItem>
+        <ListView>
+          <ListItem>
+            <TopicDetailContent topic={this.props.topic} />
+          </ListItem>
+        </ListView>
       </Wrapper>
     );
   }

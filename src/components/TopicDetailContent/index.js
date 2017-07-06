@@ -5,9 +5,7 @@ import { Map } from 'immutable';
 import { theme } from 'ui';
 import TopicTime from '../TopicTime';
 
-const Wrapper = styled.div`
-
-`;
+const Wrapper = styled.div``;
 
 const Title = styled.div`
   font-style: normal;

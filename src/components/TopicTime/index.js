@@ -19,11 +19,7 @@ class TopicTime extends Component {
         <FormattedMessage
           {...messages.text}
           values={{
-            relativeTime: (
-              <FormattedRelative
-                value={this.props.value}
-              />
-            ),
+            relativeTime: <FormattedRelative value={this.props.value} />,
           }}
         />
         {this.props.children}
