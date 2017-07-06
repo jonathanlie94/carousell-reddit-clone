@@ -13,7 +13,6 @@ const StyledListItem = styled(ListItem)`
 
 const Title = styled.div`
   font-family: Overwatch;
-  font-style: italic;
   color: ${theme.colors.darkergrey};
   font-size: ${theme.fontSizes.large};
 `;
