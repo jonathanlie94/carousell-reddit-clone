@@ -8,12 +8,13 @@ import {
   ListItem,
   TopicDetailContent,
   ListView,
+  RootContainer,
+  MainContainer,
+  SideContainer,
 } from 'components';
 import Helmet from 'react-helmet';
 import { selectTopic } from './actions';
 import { Map } from 'immutable';
-
-const Wrapper = styled.div``;
 
 class TopicsPage extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ class TopicsPage extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <RootContainer>
         <ScrollToTopOnMount />
         {this.props.topic && this.props.topic.get('title')
           ? <Helmet>
@@ -31,12 +32,21 @@ class TopicsPage extends Component {
                 this.props.topic.get('title')}`}</title>
             </Helmet>
           : false}
-        <ListView>
-          <ListItem>
-            <TopicDetailContent topic={this.props.topic} />
-          </ListItem>
-        </ListView>
-      </Wrapper>
+
+        <MainContainer>
+          <ListView>
+            <ListItem>
+              <TopicDetailContent topic={this.props.topic} />
+            </ListItem>
+          </ListView>
+        </MainContainer>
+
+        <SideContainer>
+          <ListView>
+            <ListItem />
+          </ListView>
+        </SideContainer>
+      </RootContainer>
     );
   }
 }

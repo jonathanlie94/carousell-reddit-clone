@@ -12,12 +12,6 @@ const SubmitPage = asyncComponent(() => import('containers/SubmitPage'));
 
 const Wrapper = styled.div`min-width: 768px;`;
 
-const ContentWrapper = styled.div`
-  background-color: ${theme.colors.grey};
-  display: flex;
-  flex-direction: row;
-`;
-
 const App = props =>
   <Wrapper>
     <Helmet>
@@ -32,18 +26,12 @@ const App = props =>
       <Banner />
     </Header>
 
-    <ContentWrapper>
-      <MainContainer>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/topics/:id" component={TopicsPage} />
-          <Route path="/topics/new" component={SubmitPage} />
-          <Route component={PageNotFound} />
-        </Switch>
-      </MainContainer>
-
-      <SideContainer />
-    </ContentWrapper>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/topics/:id" component={TopicsPage} />
+      <Route path="/topics/new" component={SubmitPage} />
+      <Route component={PageNotFound} />
+    </Switch>
   </Wrapper>;
 
 export default App;

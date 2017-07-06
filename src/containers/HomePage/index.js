@@ -9,6 +9,9 @@ import {
   ScrollToTopOnMount,
   TopicListContent,
   ListView,
+  RootContainer,
+  MainContainer,
+  SideContainer,
 } from 'components';
 
 class HomePage extends Component {
@@ -18,18 +21,26 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <RootContainer>
         <ScrollToTopOnMount />
-        <ListView>
-          {this.props.topics.map(topic => {
-            return (
-              <ListItem key={`topic-${topic.get('id')}`}>
-                <TopicListContent topic={topic} />
-              </ListItem>
-            );
-          })}
-        </ListView>
-      </div>
+        <MainContainer>
+          <ListView>
+            {this.props.topics.map(topic => {
+              return (
+                <ListItem key={`topic-${topic.get('id')}`}>
+                  <TopicListContent topic={topic} />
+                </ListItem>
+              );
+            })}
+          </ListView>
+        </MainContainer>
+
+        <SideContainer>
+          <ListView>
+            <ListItem />
+          </ListView>
+        </SideContainer>
+      </RootContainer>
     );
   }
 }
