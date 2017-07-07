@@ -21,6 +21,7 @@ const Description = styled.div`
   margin: ${theme.margins.regular} 0;
   font-style: ${theme.fontSizes.regular};
   color: ${theme.colors.darkergrey};
+  white-space: pre-wrap;
 `;
 
 class TopicDetailContent extends Component {
