@@ -9,9 +9,18 @@ import {
   LOAD_TOPIC_ERROR,
 } from './constants';
 
-// The initial state of the App.
-// Think of the states here as a global state.
-// In this case, things such as loading and storing the posts are processed here.
+/**
+  The initial state of the App.
+  Think of the states here as a global state.
+  In this case, things such as loading and storing the posts are processed here.
+
+  You might notice that the topics are stored here, but there are actions in individual pages
+  that this reducer also subscribes to.
+
+  For example, create topic actions are in submitPageReducer, but load topic actions are in appReducer.
+  I made this decision as I think that there might be more pages that use load topic actions,
+  but only the submitPage can create topics.
+**/
 const initialState = fromJS({
   loading: false,
   error: false,
