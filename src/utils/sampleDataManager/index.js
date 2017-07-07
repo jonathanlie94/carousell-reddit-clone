@@ -174,7 +174,7 @@ let data = {
 
 // Similar to index, there is a detail that is omitted.
 export const getDataList = (page = 1, per_page = 20) => {
-  const dataIds = Object.keys(data).sort((a, b) => a - b);
+  const dataIds = Object.keys(data).sort((a, b) => b - a);
   const upper = Math.ceil(per_page / dataIds.length) + page - 1;
   const res = {};
   dataIds.slice((upper - 1) * per_page, upper * per_page).forEach(id => {
