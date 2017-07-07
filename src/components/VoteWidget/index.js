@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme } from 'ui';
+import { noselect } from 'ui/helpers';
 
 const Wrapper = styled.div`
+  ${ noselect() }
   display: inline-flex;
   flex-direction: column;
   text-align: center;
