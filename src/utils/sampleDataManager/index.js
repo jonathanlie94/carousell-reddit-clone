@@ -36,7 +36,7 @@ let data = {
   },
   5: {
     id: 5,
-    title: 'Today teaser date showed up in Orisa trailer.',
+    title: 'Doomfist has come guys.',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
     created_at: new Date(2017, 2, 25),
@@ -44,7 +44,7 @@ let data = {
   },
   6: {
     id: 6,
-    title: 'The 45 sec time in Mystery Heroes mode is absurd.',
+    title: 'Its official! Mystery Heroes is now in Arcade mode.',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
     created_at: new Date(2017, 2, 25),
@@ -52,7 +52,7 @@ let data = {
   },
   7: {
     id: 7,
-    title: 'Today we are likely to get a Doomfist teaser.',
+    title: 'I have been working on several fanarts for Mercy',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
     created_at: new Date(2017, 2, 25),
@@ -60,7 +60,7 @@ let data = {
   },
   8: {
     id: 8,
-    title: 'Topic 4',
+    title: 'Topic 8989',
     description: `
       I've seen many posts recently making speculations on the recent blog article regarding one of the Doomfists breaking out of jail.
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
@@ -70,7 +70,7 @@ let data = {
   },
   9: {
     id: 9,
-    title: 'Today teaser date showed up in Orisa trailer.',
+    title: 'How Reinhardt charge remains broken',
     description:
       '7 on the screen, 4 on the toolbox below. I might be reaching but I BELIEVE THIS.',
     created_at: new Date(2017, 2, 28),
@@ -78,7 +78,7 @@ let data = {
   },
   10: {
     id: 10,
-    title: 'The 45 sec time in Mystery Heroes mode is absurd.',
+    title: 'j000m god tier Widow',
     description:
       'It has probably been said before, but it is worth repeating. In Mystery Heroes mode, your team has 45 seconds to assemble team, but whatever you choose, your selection is randomized immediately. Timer should be reduced to 5-10 seconds for that game mode.',
     created_at: new Date(2017, 3, 28),
@@ -154,7 +154,7 @@ let data = {
   },
   19: {
     id: 19,
-    title: 'Today we are likely to get a Doomfist teaser.',
+    title: 'How are you today?',
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
     created_at: new Date(2017, 5, 29),
@@ -177,7 +177,7 @@ export const getDataList = (page = 1, per_page = 20) => {
   const dataIds = Object.keys(data).sort((a, b) => a - b);
   const upper = Math.ceil(per_page / dataIds.length) + page - 1;
   const res = {};
-  dataIds.slice((upper - 1) * per_page, (upper * per_page)).forEach(id => {
+  dataIds.slice((upper - 1) * per_page, upper * per_page).forEach(id => {
     res[id] = {
       ...data[id],
       description: undefined,
