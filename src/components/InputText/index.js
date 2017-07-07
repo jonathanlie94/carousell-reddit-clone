@@ -11,7 +11,8 @@ const StyledInput = styled.input`
   width: 300px;
   border-width: 2px;
   border-style: solid;
-  border-color:  ${props => props.error ? theme.colors.yellow : theme.colors.grey};
+  border-color: ${props =>
+    props.error ? theme.colors.yellow : theme.colors.grey};
   background-color: ${theme.colors.white};
   outline-color: ${theme.colors.blue};
 `;

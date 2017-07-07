@@ -23,13 +23,14 @@ const StyledButton = styled.button`
     transform: skewX(.25rad);
     display: block;
   }
-  &:focus:not([disabled]), :hover:not([disabled]){
-    opacity: .625
+  &:focus:not([disabled]),
+  :hover:not([disabled]) {
+    opacity: .625;
   }
   &:disabled {
-    opacity: .25
+    opacity: .25;
   }
-  transition: .1s ease
+  transition: .1s ease;
 `;
 
 class Button extends Component {
