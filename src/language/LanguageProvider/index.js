@@ -4,12 +4,6 @@ import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 
 class LanguageProvider extends PureComponent {
-  static propTypes = {
-    locale: PropTypes.string,
-    messages: PropTypes.object,
-    children: PropTypes.element.isRequired,
-  };
-
   render() {
     return (
       <IntlProvider
@@ -22,6 +16,12 @@ class LanguageProvider extends PureComponent {
     );
   }
 }
+
+LanguageProvider.propTypes = {
+  locale: PropTypes.string,
+  messages: PropTypes.object,
+  children: PropTypes.element.isRequired,
+};
 
 const mapStateToProps = state => ({
   locale: state.get('language').get('locale'),
