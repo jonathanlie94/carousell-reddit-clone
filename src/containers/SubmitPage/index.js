@@ -17,7 +17,6 @@ import {
 class SubmitPage extends Component {
   _createTopic() {
     this.props.createTopic().then(() => {
-      console.log('asdfasfsadf');
       this.props.history.push('/');
     });
   }
@@ -44,7 +43,7 @@ class SubmitPage extends Component {
                   })}
                 value={this.props.description}
               />
-              <Button onClick={this.props.createTopic}>Submit</Button>
+              <Button onClick={() => this._createTopic()}>Submit</Button>
             </ListItem>
           </ListView>
         </MainContainer>
