@@ -3,7 +3,7 @@ import theme from './theme';
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
-  @font-face { font-family: "Overwatch"; src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff'); }
+  @font-face { font-family: "Overwatch"; src: url("https://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff'); }
 
   html {
     font-family: Arial, sans-serif;
