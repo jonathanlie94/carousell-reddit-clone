@@ -70,7 +70,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "npm run extract-intl; node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "CI=true node scripts/test.js --env=jsdom",
+    "test-watch": "node scripts/test.js --env=jsdom",
     "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma es5 --write '{src,__tests__}/**/*.js'",
     "extract-i18n": "NODE_ENV=development babel-node --presets latest,stage-0 -- ./src/language/extract-i18n.js"
   },
