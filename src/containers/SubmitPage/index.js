@@ -16,11 +16,10 @@ import {
 
 class SubmitPage extends Component {
   _createTopic() {
-    this.props.createTopic()
-      .then(() => {
-        console.log('asdfasfsadf')
-        this.props.history.push('/');
-      })
+    this.props.createTopic().then(() => {
+      console.log('asdfasfsadf');
+      this.props.history.push('/');
+    });
   }
 
   render() {

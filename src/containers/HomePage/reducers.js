@@ -20,11 +20,13 @@ function homePageReducer(state = initialState, action) {
       return currentPage > 1 ? state.set('page', state.get('page') - 1) : state;
     case LOAD_TOPICS_SUCCESS:
       return state
-        .set('topicIds',
+        .set(
+          'topicIds',
           action.topics
-          .map(t => t.get('id'))
-          .sortBy((item, key) => -Number(key))
-          .toList())
+            .map(t => t.get('id'))
+            .sortBy((item, key) => -Number(key))
+            .toList()
+        )
         .set('total', action.meta.get('total'));
     default:
       return state;

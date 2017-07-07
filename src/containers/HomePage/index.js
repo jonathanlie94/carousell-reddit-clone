@@ -50,7 +50,6 @@ HomePage.propTypes = {
 
 const mapStateToProps = state => {
   const topicIds = state.get('homePage').get('topicIds');
-  console.log(topicIds);
   return {
     topics: topicIds.map(id => state.get('app').get('topics').get(`${id}`)),
   };

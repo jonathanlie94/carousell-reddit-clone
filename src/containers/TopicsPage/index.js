@@ -51,9 +51,9 @@ class TopicsPage extends Component {
 function mapStateToProps(state) {
   return {
     topic: state
-        .get('app')
-        .get('topics')
-        .get(state.get('topicsPage').get('selectedTopicId')),
+      .get('app')
+      .get('topics')
+      .get(state.get('topicsPage').get('selectedTopicId')),
   };
 }
 

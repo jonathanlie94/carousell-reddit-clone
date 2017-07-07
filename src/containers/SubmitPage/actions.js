@@ -33,7 +33,7 @@ export function requestCreateTopic(form) {
   return (dispatch, getState) => {
     return new Promise((res, rej) => {
       dispatch(createTopic());
-      const form = getState().get('submitPage').get('form').toJS()
+      const form = getState().get('submitPage').get('form').toJS();
       setTimeout(() => {
         const errorMessage = create(form);
         if (!errorMessage) {
