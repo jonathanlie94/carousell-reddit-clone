@@ -199,16 +199,23 @@ export const getData = id => {
 };
 
 // Just push a new item into our data array.
-export const create = (title, description) => {
+export const create = form => {
+  // Validate our data
+  if (form.title.length > 255) {
+    return {
+      title: 'Title is too long!',
+    };
+  }
+
   idCounter++;
   data[idCounter] = {
     id: idCounter,
-    title,
-    description,
+    title: form.title,
+    description: form.description,
     created_at: new Date(),
     votes: 0,
   };
 
   // Success!
-  return true;
+  return null;
 };

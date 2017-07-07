@@ -31,6 +31,7 @@ class Button extends Component {
         className={this.props.className}
         color={this.props.color}
         backgroundColor={this.props.backgroundColor}
+        onClick={this.props.onClick || null}
       >
         {this.props.children}
       </StyledButton>
@@ -41,6 +42,12 @@ class Button extends Component {
 Button.propTypes = {
   color: PropTypes.string,
   backgroundColor: PropTypes.string,
+  onClick: PropTypes.func,
+};
+
+Button.defaultProps = {
+  color: theme.colors.white,
+  backgroundColor: theme.colors.blue,
 };
 
 export default Button;
