@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   text-align: center;
   font-family: Overwatch;
   font-size: ${theme.fontSizes.regularL};
+  outline-width: 0;
   /* The paddings here are different from right and left, because we are using a
     a special font which makes the formatting unequal between sides
   */
@@ -22,6 +23,13 @@ const StyledButton = styled.button`
     transform: skewX(.25rad);
     display: block;
   }
+  &:focus:not([disabled]), :hover:not([disabled]){
+    opacity: .625
+  }
+  &:disabled {
+    opacity: .25
+  }
+  transition: .1s ease
 `;
 
 class Button extends Component {
@@ -30,8 +38,9 @@ class Button extends Component {
       <StyledButton
         className={this.props.className}
         color={this.props.color}
+        disabled={this.props.disabled}
         backgroundColor={this.props.backgroundColor}
-        onClick={this.props.onClick || null}
+        onClick={this.props.disabled ? null : this.props.onClick || null}
       >
         <span>
           {this.props.children}
