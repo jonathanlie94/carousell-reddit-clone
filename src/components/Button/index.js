@@ -33,7 +33,9 @@ class Button extends Component {
         backgroundColor={this.props.backgroundColor}
         onClick={this.props.onClick || null}
       >
-        {this.props.children}
+        <span>
+          {this.props.children}
+        </span>
       </StyledButton>
     );
   }
