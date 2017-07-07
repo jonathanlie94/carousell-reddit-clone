@@ -8,7 +8,12 @@ import {
   UPVOTE_TOPIC,
   DOWNVOTE_TOPIC,
 } from './constants';
-import { getDataList, getData, upvote, downvote } from 'utils/sampleDataManager';
+import {
+  getDataList,
+  getData,
+  upvote,
+  downvote,
+} from 'utils/sampleDataManager';
 import { fromJS } from 'immutable';
 
 const FETCH_DELAY = 500;
@@ -82,7 +87,6 @@ export function loadTopicError(error) {
     error,
   };
 }
-
 
 export function upvoteTopic(topic) {
   return {

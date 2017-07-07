@@ -16,7 +16,10 @@ import {
   SideContainer,
   VoteWidget,
 } from 'components';
-import { requestUpvoteTopic, requestDownvoteTopic } from 'containers/App/actions';
+import {
+  requestUpvoteTopic,
+  requestDownvoteTopic,
+} from 'containers/App/actions';
 
 const StyledListItem = styled(ListItem)`
   display: flex;
@@ -72,8 +75,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTopics: () => dispatch(fetchTopics()),
-    upvoteTopic: (id) => dispatch(requestUpvoteTopic(id)),
-    downvoteTopic: (id) => dispatch(requestDownvoteTopic(id)),
+    upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
+    downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
   };
 };
 

@@ -5,8 +5,7 @@ import { theme } from 'ui';
 import { noselect } from 'ui/helpers';
 
 const Wrapper = styled.div`
-  ${ noselect() }
-  display: inline-flex;
+  ${noselect()} display: inline-flex;
   flex-direction: column;
   text-align: center;
   width: auto;
