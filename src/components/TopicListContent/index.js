@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { theme } from 'ui';
 import TopicTime from '../TopicTime';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`margin-left: ${theme.margins.small};`;
 
 const StyledLink = styled(Link)`
   font-style: normal;
@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
 class TopicListContent extends PureComponent {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className={this.props.className}>
         <StyledLink to={`/topics/${this.props.topic.get('id')}`}>
           {this.props.topic.get('title')}
         </StyledLink>
@@ -28,6 +28,7 @@ class TopicListContent extends PureComponent {
 }
 
 TopicListContent.propTypes = {
+  className: PropTypes.string,
   topic: PropTypes.instanceOf(Map),
 };
 

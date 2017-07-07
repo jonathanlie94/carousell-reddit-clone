@@ -10,10 +10,18 @@ import {
   RootContainer,
   MainContainer,
   SideContainer,
+  VoteWidget,
 } from 'components';
 import Helmet from 'react-helmet';
 import SideSubmit from 'containers/SideSubmit';
+import styled from 'styled-components';
 import { selectTopic } from './actions';
+
+const StyledListItem = styled(ListItem)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+`;
 
 class TopicsPage extends Component {
   componentDidMount() {
@@ -34,9 +42,12 @@ class TopicsPage extends Component {
 
         <MainContainer>
           <ListView>
-            <ListItem>
+            <StyledListItem>
+              {this.props.topic
+                ? <VoteWidget count={this.props.topic.get('votes')} />
+                : false}
               <TopicDetailContent topic={this.props.topic} />
-            </ListItem>
+            </StyledListItem>
           </ListView>
         </MainContainer>
 

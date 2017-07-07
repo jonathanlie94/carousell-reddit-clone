@@ -19,6 +19,10 @@ const App = props =>
       <link rel="manifest" href="/manifest.json" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <title>Reddit Clone</title>
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
     </Helmet>
 
     <Header>

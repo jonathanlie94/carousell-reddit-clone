@@ -13,3 +13,4 @@ export { default as SideContainer } from './SideContainer';
 export { default as TopicDetailContent } from './TopicDetailContent';
 export { default as TopicListContent } from './TopicListContent';
 export { default as TopicTime } from './TopicTime';
+export { default as VoteWidget } from './VoteWidget';

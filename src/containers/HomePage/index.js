@@ -5,6 +5,7 @@ import { fetchTopics } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
 import { List } from 'immutable';
 import SideSubmit from 'containers/SideSubmit';
+import styled from 'styled-components';
 import {
   ListItem,
   ScrollToTopOnMount,
@@ -13,7 +14,14 @@ import {
   RootContainer,
   MainContainer,
   SideContainer,
+  VoteWidget,
 } from 'components';
+
+const StyledListItem = styled(ListItem)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+`;
 
 class HomePage extends Component {
   componentWillMount() {
@@ -28,9 +36,10 @@ class HomePage extends Component {
           <ListView>
             {this.props.topics.map((val, key) => {
               return (
-                <ListItem key={`topic-${key}`}>
+                <StyledListItem key={`topic-${key}`}>
+                  <VoteWidget count={val.get('votes')} />
                   <TopicListContent topic={val} />
-                </ListItem>
+                </StyledListItem>
               );
             })}
           </ListView>
