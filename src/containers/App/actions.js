@@ -5,11 +5,14 @@ import {
   LOAD_TOPIC,
   LOAD_TOPIC_SUCCESS,
   LOAD_TOPIC_ERROR,
+  UPVOTE_TOPIC,
+  DOWNVOTE_TOPIC,
 } from './constants';
-import { getDataList, getData } from 'utils/sampleDataManager';
+import { getDataList, getData, upvote, downvote } from 'utils/sampleDataManager';
 import { fromJS } from 'immutable';
 
-const FAKE_TIMEOUT = 500;
+const FETCH_DELAY = 500;
+const VOTE_DELAY = 100;
 
 export function loadTopics() {
   return {
@@ -25,7 +28,7 @@ export function fetchTopics(page, per_page) {
     setTimeout(() => {
       const data = getDataList(page, per_page);
       dispatch(topicsLoaded(fromJS(data)));
-    }, FAKE_TIMEOUT);
+    }, FETCH_DELAY);
   };
 }
 
@@ -62,7 +65,7 @@ export function fetchTopic(id) {
       } else {
         dispatch(loadTopicError('Topic not Found!'));
       }
-    }, 500);
+    }, FETCH_DELAY);
   };
 }
 
@@ -77,5 +80,42 @@ export function loadTopicError(error) {
   return {
     type: LOAD_TOPIC_ERROR,
     error,
+  };
+}
+
+
+export function upvoteTopic(topic) {
+  return {
+    type: UPVOTE_TOPIC,
+    topic,
+  };
+}
+
+export function requestUpvoteTopic(id) {
+  return (dispatch, getState) => {
+    setTimeout(() => {
+      const data = upvote(id);
+      if (data) {
+        dispatch(upvoteTopic(fromJS(data)));
+      }
+    }, VOTE_DELAY);
+  };
+}
+
+export function downvoteTopic(topic) {
+  return {
+    type: DOWNVOTE_TOPIC,
+    topic,
+  };
+}
+
+export function requestDownvoteTopic(id) {
+  return (dispatch, getState) => {
+    setTimeout(() => {
+      const data = downvote(id);
+      if (data) {
+        dispatch(downvoteTopic(fromJS(data)));
+      }
+    }, VOTE_DELAY);
   };
 }

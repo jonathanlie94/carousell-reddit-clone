@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme } from 'ui';
@@ -28,19 +28,19 @@ const ZeroCountIcon = styled.i`
   color: ${theme.colors.grey};
 `;
 
-class VoteWidget extends PureComponent {
+class VoteWidget extends Component {
   render() {
     return (
       <Wrapper>
         <ArrowIcon className="material-icons" onClick={this.props.onUpvote}>
           arrow_drop_up
         </ArrowIcon>
-        {this.props.count > 0
+        {this.props.count !== 0
           ? <div>
               {this.props.count}
             </div>
           : <ZeroCountIcon className="material-icons">lens</ZeroCountIcon>}
-        <ArrowIcon className="material-icons" onClick={this.props.onUpvote}>
+        <ArrowIcon className="material-icons" onClick={this.props.onDownvote}>
           arrow_drop_down
         </ArrowIcon>
       </Wrapper>

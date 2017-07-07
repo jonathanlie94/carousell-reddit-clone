@@ -64,7 +64,7 @@ function mapStateToProps(state) {
     topic: state
       .get('app')
       .get('topics')
-      .get(state.get('topicsPage').get('selectedTopicId')),
+      .get(`${state.get('topicsPage').get('selectedTopicId')}`),
   };
 }
 

@@ -16,6 +16,7 @@ import {
   SideContainer,
   VoteWidget,
 } from 'components';
+import { requestUpvoteTopic, requestDownvoteTopic } from 'containers/App/actions';
 
 const StyledListItem = styled(ListItem)`
   display: flex;
@@ -34,11 +35,15 @@ class HomePage extends Component {
         <ScrollToTopOnMount />
         <MainContainer>
           <ListView>
-            {this.props.topics.map((val, key) => {
+            {this.props.topics.map((topic, key) => {
               return (
                 <StyledListItem key={`topic-${key}`}>
-                  <VoteWidget count={val.get('votes')} />
-                  <TopicListContent topic={val} />
+                  <VoteWidget
+                    count={topic.get('votes')}
+                    onUpvote={() => this.props.upvoteTopic(topic.get('id'))}
+                    onDownvote={() => this.props.downvoteTopic(topic.get('id'))}
+                  />
+                  <TopicListContent topic={topic} />
                 </StyledListItem>
               );
             })}
@@ -67,6 +72,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTopics: () => dispatch(fetchTopics()),
+    upvoteTopic: (id) => dispatch(requestUpvoteTopic(id)),
+    downvoteTopic: (id) => dispatch(requestDownvoteTopic(id)),
   };
 };
 

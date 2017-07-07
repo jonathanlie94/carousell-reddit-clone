@@ -220,3 +220,25 @@ export const create = form => {
   // Success!
   return null;
 };
+
+export const upvote = id => {
+  data[id] = {
+    ...data[id],
+    votes: data[id].votes + 1,
+  };
+  return {
+    id,
+    votes: data[id].votes,
+  };
+};
+
+export const downvote = id => {
+  data[id] = {
+    ...data[id],
+    votes: data[id].votes - 1,
+  };
+  return {
+    id,
+    votes: data[id].votes,
+  };
+};

@@ -7,6 +7,8 @@ import {
   LOAD_TOPIC,
   LOAD_TOPIC_SUCCESS,
   LOAD_TOPIC_ERROR,
+  UPVOTE_TOPIC,
+  DOWNVOTE_TOPIC,
 } from './constants';
 
 /**
@@ -33,15 +35,17 @@ function appReducer(state = initialState, action) {
       return state.set('loading', true).set('error', false);
     case LOAD_TOPICS_SUCCESS:
       return state
-        .set('topics', state.get('topics').merge(action.topics))
+        .set('topics', action.topics.merge(state.get('topics')))
         .set('loading', false)
         .set('error', false);
     case LOAD_TOPICS_ERROR:
       return state.set('error', action.error).set('loading', false);
+    case UPVOTE_TOPIC:
+    case DOWNVOTE_TOPIC:
     case LOAD_TOPIC_SUCCESS:
       return state.mergeIn(
         ['topics'],
-        state.get('topics').set(action.topic.get('id'), action.topic)
+        state.get('topics').mergeIn([`${action.topic.get('id')}`], action.topic)
       );
     case LOAD_TOPIC_ERROR:
       return state.set('error', action.error).set('loading', false);
