@@ -6,6 +6,8 @@ export default {
     text: '#999',
     grey: '#C8C8C8',
     blue: '#00C3FF',
+    yellow: '#FFC70E',
+    red: '#FF6961',
   },
   fontSizes: {
     small: '0.75rem',
