@@ -64,6 +64,9 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-react-intl": "^2.3.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.1",
+    "pre-commit": "^1.2.2",
     "redux-devtools": "^3.4.0"
   },
   "scripts": {
@@ -72,7 +75,8 @@
     "test": "CI=true node scripts/test.js --env=jsdom",
     "test-watch": "node scripts/test.js --env=jsdom",
     "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma es5 --write '{src,__tests__}/**/*.js'",
-    "extract-i18n": "NODE_ENV=development babel-node --presets latest,stage-0 -- ./src/language/extract-i18n.js"
+    "extract-i18n": "NODE_ENV=development babel-node --presets latest,stage-0 -- ./src/language/extract-i18n.js",
+    "precommit": "lint-staged"
   },
   "jest": {
     "modulePaths": [
@@ -116,5 +120,11 @@
   },
   "engines": {
     "node": "6.11.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
