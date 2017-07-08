@@ -1,5 +1,9 @@
 {
+  "components.Paginator.nextPage": "lanjut",
+  "components.Paginator.pageNumber": "Halaman {page}",
+  "components.Paginator.previousPage": "sebelumnya",
   "components.TopicTime.text": "Disubmit {relativeTime}",
+  "containers.Footer.languageInstructions": "",
   "containers.SideSubmit.postButton": "Post",
   "containers.SideSubmit.title": "Submit Konten",
   "containers.SubmitPage.description": "Deskripsi",

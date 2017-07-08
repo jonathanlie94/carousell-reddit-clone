@@ -1,5 +1,9 @@
 {
+  "components.Paginator.nextPage": "next",
+  "components.Paginator.pageNumber": "Page {page}",
+  "components.Paginator.previousPage": "previous",
   "components.TopicTime.text": "Submitted {relativeTime}",
+  "containers.Footer.languageInstructions": "View In",
   "containers.SideSubmit.postButton": "Post",
   "containers.SideSubmit.title": "Submit Content",
   "containers.SubmitPage.description": "Description",
