@@ -15,6 +15,11 @@ import {
 import Helmet from 'react-helmet';
 import SideSubmit from 'containers/SideSubmit';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import {
+  requestUpvoteTopic,
+  requestDownvoteTopic,
+} from 'containers/App/actions';
 import { selectTopic } from './actions';
 
 const StyledListItem = styled(ListItem)`
@@ -44,7 +49,13 @@ class TopicsPage extends Component {
           <ListView>
             <StyledListItem>
               {this.props.topic
-                ? <VoteWidget count={this.props.topic.get('votes')} />
+                ? <VoteWidget
+                    count={this.props.topic.get('votes')}
+                    onUpvote={() =>
+                      this.props.upvoteTopic(this.props.topic.get('id'))}
+                    onDownvote={() =>
+                      this.props.downvoteTopic(this.props.topic.get('id'))}
+                  />
                 : false}
               <TopicDetailContent topic={this.props.topic} />
             </StyledListItem>
@@ -59,6 +70,14 @@ class TopicsPage extends Component {
   }
 }
 
+TopicsPage.propTypes = {
+  topic: PropTypes.instanceOf(Map),
+  selectTopic: PropTypes.func,
+  fetchTopic: PropTypes.func,
+  upvoteTopi: PropTypes.func,
+  downoteTopi: PropTypes.func,
+};
+
 function mapStateToProps(state) {
   return {
     topic: state
@@ -71,6 +90,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => ({
   selectTopic: id => dispatch(selectTopic(id)),
   fetchTopic: id => dispatch(fetchTopic(id)),
+  upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
+  downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
 });
 
 export default withRouter(
