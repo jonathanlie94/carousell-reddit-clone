@@ -15,11 +15,13 @@ import {
   MainContainer,
   SideContainer,
   VoteWidget,
+  Paginator,
 } from 'components';
 import {
   requestUpvoteTopic,
   requestDownvoteTopic,
 } from 'containers/App/actions';
+import { incrementPage, decrementPage } from './actions';
 
 const StyledListItem = styled(ListItem)`
   display: flex;
@@ -28,6 +30,12 @@ const StyledListItem = styled(ListItem)`
 `;
 
 class HomePage extends Component {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.meta !== this.props.meta) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   componentWillMount() {
     this.props.fetchTopics();
   }
@@ -51,6 +59,12 @@ class HomePage extends Component {
               );
             })}
           </ListView>
+
+          <Paginator
+            onPreviousPage={this.props.decrementPage}
+            onNextPage={this.props.incrementPage}
+            meta={this.props.meta}
+          />
         </MainContainer>
 
         <SideContainer>
@@ -69,6 +83,7 @@ const mapStateToProps = state => {
   const topicIds = state.get('homePage').get('topicIds');
   return {
     topics: topicIds.map(id => state.get('app').get('topics').get(`${id}`)),
+    meta: state.get('homePage').get('meta'),
   };
 };
 
@@ -77,6 +92,8 @@ const mapDispatchToProps = dispatch => {
     fetchTopics: () => dispatch(fetchTopics()),
     upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
     downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
+    incrementPage: () => dispatch(incrementPage()),
+    decrementPage: () => dispatch(decrementPage()),
   };
 };
 

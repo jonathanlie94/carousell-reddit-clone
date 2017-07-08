@@ -7,6 +7,7 @@ export { default as InputTextarea } from './InputTextarea';
 export { default as ListItem } from './ListItem';
 export { default as ListView } from './ListView';
 export { default as MainContainer } from './MainContainer';
+export { default as Paginator } from './Paginator';
 export { default as PageNotFound } from './PageNotFound';
 export { default as RootContainer } from './RootContainer';
 export { default as ScrollToTopOnMount } from './ScrollToTopOnMount';

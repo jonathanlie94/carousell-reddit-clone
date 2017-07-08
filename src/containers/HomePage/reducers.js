@@ -1,23 +1,34 @@
-import { fromJS } from 'immutable';
+import { fromJS, List } from 'immutable';
 
 import { INCREMENT_PAGE, DECREMENT_PAGE } from './constants';
 
 import { LOAD_TOPICS_SUCCESS } from 'containers/App/constants';
 
 const initialState = fromJS({
-  page: 1,
-  per_page: 20,
-  total: 0,
+  meta: {
+    page: 1,
+    per_page: 20,
+    total: 0,
+  },
   topicIds: [],
 });
 
 function homePageReducer(state = initialState, action) {
-  let currentPage = state.get('page');
   switch (action.type) {
     case INCREMENT_PAGE:
-      return state.set('page', state.get('page') + 1);
+      return state
+        .mergeIn(
+          ['meta'],
+          state.get('meta').set('page', state.get('meta').get('page') + 1)
+        )
+        .set('topicIds', List([]));
     case DECREMENT_PAGE:
-      return currentPage > 1 ? state.set('page', state.get('page') - 1) : state;
+      return state
+        .mergeIn(
+          ['meta'],
+          state.get('meta').set('page', state.get('meta').get('page') - 1)
+        )
+        .set('topicIds', List([]));
     case LOAD_TOPICS_SUCCESS:
       return state
         .set(
@@ -27,7 +38,7 @@ function homePageReducer(state = initialState, action) {
             .sortBy((item, key) => -Number(key))
             .toList()
         )
-        .set('total', action.meta.get('total'));
+        .set('meta', action.meta);
     default:
       return state;
   }
