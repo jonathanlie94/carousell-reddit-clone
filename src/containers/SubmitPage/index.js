@@ -60,7 +60,7 @@ class SubmitPage extends Component {
     }
   }
 
-  componentWillUnmoun() {
+  componentWillUnmount() {
     this.props.dispatch(resetForm());
   }
 
