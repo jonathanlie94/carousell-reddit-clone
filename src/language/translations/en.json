@@ -1,5 +1,10 @@
 {
   "components.TopicTime.text": "Submitted {relativeTime}",
+  "containers.SideSubmit.postButton": "Post",
   "containers.SideSubmit.title": "Submit Content",
-  "containerse.SideSubmit.postButton": "Post"
+  "containers.SubmitPage.description": "Description",
+  "containers.SubmitPage.submit": "Submit",
+  "containers.SubmitPage.title": "Title",
+  "containers.SubmitPage.titleRequired": "Title is required!",
+  "containers.SubmitPage.titleTooLong": "Title too long!"
 }

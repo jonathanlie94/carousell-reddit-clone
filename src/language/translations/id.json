@@ -1,5 +1,10 @@
 {
   "components.TopicTime.text": "Disubmit {relativeTime}",
+  "containers.SideSubmit.postButton": "Post",
   "containers.SideSubmit.title": "Submit Konten",
-  "containerse.SideSubmit.postButton": "Post"
+  "containers.SubmitPage.description": "Deskripsi",
+  "containers.SubmitPage.submit": "Submit",
+  "containers.SubmitPage.title": "Judul",
+  "containers.SubmitPage.titleRequired": "Judul diperlukan!",
+  "containers.SubmitPage.titleTooLong": "Judul terlalu panjang!"
 }

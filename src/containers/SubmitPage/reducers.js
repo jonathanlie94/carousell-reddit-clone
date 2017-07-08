@@ -20,9 +20,11 @@ const initialState = fromJS({
 function submitPageReducer(state = initialState, action) {
   switch (action.type) {
     case SET_FORM:
-      return state.set('form', state.get('form').merge(Map(action.form)));
+      return state
+        .set('form', state.get('form').merge(Map(action.form)))
+        .set('error', Map({}));
     case RESET_FORM:
-      return state.set('form', initialState.get('form'));
+      return state.set('form', initialState.get('form')).set('error', Map({}));
     case CREATE_TOPIC:
       return state.set('loading', true);
     case CREATE_TOPIC_SUCCESS:

@@ -6,7 +6,7 @@ export default defineMessages({
     defaultMessage: 'Submit Content',
   },
   postButton: {
-    id: 'containerse.SideSubmit.postButton',
+    id: 'containers.SideSubmit.postButton',
     defaultMessage: 'Post',
   },
 });

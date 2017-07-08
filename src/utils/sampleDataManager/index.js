@@ -1,3 +1,4 @@
+const MAX_TITLE_CHARACTERS = 255;
 let idCounter = 20;
 let data = {
   1: {
@@ -202,9 +203,16 @@ export const getData = id => {
 // Just push a new item into our data array.
 export const create = form => {
   // Validate our data
-  if (form.title.length > 255) {
+  // We couldn't support i18n here because there are no React components involved here,
+  // and we cannot exactly inject i18n here. Therefore, in the case that the user bypasses the submit button,
+  // only English validation can be returned from our sample data manager.
+  if (form.title.length > MAX_TITLE_CHARACTERS) {
     return {
       title: 'Title is too long!',
+    };
+  } else if (form.title.length === 0) {
+    return {
+      title: 'Title is required!',
     };
   }
 

@@ -6,7 +6,7 @@ import { theme } from 'ui';
 const StyledTextarea = styled.textarea`
   font-family: Arial, sans-serif;
   border-radius: 4px;
-  padding: 0.5rem 0.25rem;
+  padding: 0.25rem;
   margin: 0;
   box-sizing: border-box;
   width: 100%;
@@ -19,17 +19,29 @@ const StyledTextarea = styled.textarea`
   outline-width: 4px;
 `;
 
+const ErrorMessage = styled.div`
+  color: ${theme.colors.red};
+  margin-top: ${theme.margins.small};
+`;
+
 class InputTextarea extends PureComponent {
   render() {
     return (
-      <StyledTextarea
-        className={this.props.className}
-        cols={this.props.cols}
-        rows={this.props.rows}
-        type="text"
-        onChange={e => this.props.onChange(e.target.value)}
-        value={this.props.value}
-      />
+      <div className={this.props.className}>
+        <StyledTextarea
+          cols={this.props.cols}
+          rows={this.props.rows}
+          type="text"
+          onBlur={this.props.onBlur}
+          onChange={e => this.props.onChange(e.target.value)}
+          value={this.props.value}
+        />
+        {this.props.error
+          ? <ErrorMessage>
+              {this.props.error}
+            </ErrorMessage>
+          : false}
+      </div>
     );
   }
 }
@@ -39,11 +51,12 @@ InputTextarea.propTypes = {
   rows: PropTypes.number,
   cols: PropTypes.number,
   value: PropTypes.string,
+  onBlur: PropTypes.func,
 };
 
 InputTextarea.defaultProps = {
   rows: 20,
   cols: 80,
-}
+};
 
 export default InputTextarea;
