@@ -9,7 +9,6 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 const Wrapper = styled.div`
-  width: 100%;
   padding: ${theme.margins.large};
   background-color: ${theme.colors.darkergrey};
   color: ${theme.colors.white};
@@ -24,14 +23,12 @@ const LanguageOption = styled.span`
     color: ${theme.colors.grey};
   }
   cursor: pointer;
-  margin-right: ${theme.margins.regular};
+  margin-left: ${theme.margins.regular};
 `;
 
-const MessageWrapper = styled.span`margin-right: ${theme.margins.large};`;
+const MessageWrapper = styled.span`margin-right: ${theme.margins.small};`;
 
 class Footer extends Component {
-  // Get all options
-
   render() {
     return (
       <Wrapper>

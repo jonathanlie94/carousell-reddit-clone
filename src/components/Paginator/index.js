@@ -12,8 +12,6 @@ import { theme } from 'ui';
 import { Map } from 'immutable';
 import { Button } from 'components';
 
-const Wrapper = styled.div`margin: ${theme.margins.largeXX} 0;`;
-
 const PageNumber = styled.span`
   font-family: Overwatch;
   font-size: ${theme.fontSizes.regularL};
@@ -35,7 +33,7 @@ class Paginator extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <div className={this.props.className}>
         {this._canRenderPreviousPage()
           ? <Button onClick={this.props.onPreviousPage}>
               <FormattedMessage {...messages.previousPage} />
@@ -54,12 +52,13 @@ class Paginator extends Component {
               <FormattedMessage {...messages.nextPage} />
             </Button>
           : false}
-      </Wrapper>
+      </div>
     );
   }
 }
 
 Paginator.propTypes = {
+  className: PropTypes.string,
   onNextPage: PropTypes.func,
   onPreviousPage: PropTypes.func,
   meta: PropTypes.instanceOf(Map), // page, per_page, total

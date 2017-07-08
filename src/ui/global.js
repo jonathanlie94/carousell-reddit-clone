@@ -12,7 +12,6 @@ injectGlobal`
   body {
     height: 100%;
     width: 100%;
-    min-width: 320px;
     font-size: 16px;
     color: ${theme.colors.text};
     font-family: Arial, sans-serif;

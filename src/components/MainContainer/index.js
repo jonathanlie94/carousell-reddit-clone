@@ -13,8 +13,9 @@ const Wrapper = styled.div`
   color: ${theme.colors.black};
   width: 100%;
   height: auto;
-  min-height: 768px;
-  margin: 12px 0 12px 12px;
+  min-height: 80rem;
+  margin: 12px 0 96px 12px;
+  position: relative;
 `;
 
 class MainContainer extends Component {

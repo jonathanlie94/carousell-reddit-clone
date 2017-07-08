@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   min-width: 320px;
   height: auto;
   padding: 12px 12px 12px 12px;
+  position: relative;
 `;
 
 class SideContainer extends Component {

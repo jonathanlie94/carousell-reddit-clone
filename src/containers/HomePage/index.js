@@ -29,6 +29,11 @@ const StyledListItem = styled(ListItem)`
   align-items: flex-start;
 `;
 
+const StyledPaginator = styled(Paginator)`
+  position: absolute;
+  bottom: -3.75rem;
+`;
+
 class HomePage extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.meta !== this.props.meta) {
@@ -60,7 +65,7 @@ class HomePage extends Component {
             })}
           </ListView>
 
-          <Paginator
+          <StyledPaginator
             onPreviousPage={this.props.decrementPage}
             onNextPage={this.props.incrementPage}
             meta={this.props.meta}

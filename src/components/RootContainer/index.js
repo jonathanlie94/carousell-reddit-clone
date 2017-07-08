@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   background-color: ${theme.colors.grey};
   display: flex;
   flex-direction: row;
+  position: relative;
 `;
 
 class RootContainer extends Component {
