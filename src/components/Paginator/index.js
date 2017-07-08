@@ -1,3 +1,8 @@
+/*
+  Used for pagination within screens that render list of items.
+  Pass in meta and callbacks on navigating to next or previous page.
+*/
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';

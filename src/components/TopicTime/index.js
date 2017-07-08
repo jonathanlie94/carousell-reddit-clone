@@ -1,3 +1,8 @@
+/*
+  A component that contains submitted time for a topic, used in both
+  list and detail content for a topic
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';

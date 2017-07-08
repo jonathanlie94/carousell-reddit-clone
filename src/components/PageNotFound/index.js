@@ -1,3 +1,7 @@
+/*
+  Rendered when the route matches nothing in our router.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

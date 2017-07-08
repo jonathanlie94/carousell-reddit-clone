@@ -1,3 +1,8 @@
+/*
+  A container used to render components on the left side of the screen.
+  Used by pages on containers.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

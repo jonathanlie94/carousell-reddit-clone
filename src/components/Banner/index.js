@@ -1,3 +1,8 @@
+/*
+  A Banner component used in Header. This is not combined with Header, so that we
+  can move Header to Container if we want to add more things to Header.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';

@@ -1,3 +1,7 @@
+/*
+  A container used to render components on the right side of the screen.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

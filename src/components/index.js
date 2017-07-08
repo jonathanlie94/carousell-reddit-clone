@@ -1,3 +1,8 @@
+/*
+  We can think of all these mostly as a dumb components, which typically do
+  not connect to our reducer.
+*/
+
 export { default as AsyncComponent } from './AsyncComponent';
 export { default as Banner } from './Banner';
 export { default as Button } from './Button';

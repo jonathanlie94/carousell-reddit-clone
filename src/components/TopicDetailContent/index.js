@@ -1,3 +1,8 @@
+/*
+  A component that contains content for a topic with full detail, to be used in
+  /topics/:id
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';

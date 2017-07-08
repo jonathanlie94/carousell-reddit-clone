@@ -1,3 +1,8 @@
+/*
+  A wrapper to apply border-radius to its children, typically used with ListItem(s),
+  hence the name ListView.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

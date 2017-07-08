@@ -1,3 +1,8 @@
+/*
+  A function used to import component only when needed, used for code splitting,
+  resulting in less chunk loaded initially.
+*/
+
 import React, { Component } from 'react';
 
 export default function asyncComponent(importComponent) {

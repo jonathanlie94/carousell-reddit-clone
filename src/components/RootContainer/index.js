@@ -1,3 +1,8 @@
+/*
+  A container used to render components one level below root.
+  This component is typically used above MainContainer and SideContainer.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

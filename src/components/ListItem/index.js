@@ -1,3 +1,8 @@
+/*
+  A card-like component used when rendering list items in MainContainer or SideContainer
+  of a page. Wrap it in a ListView to get border-radius on edges.
+*/
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';

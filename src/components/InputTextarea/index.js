@@ -1,3 +1,7 @@
+/*
+  An input textarea component, used in our create topic page.
+*/
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -48,6 +52,7 @@ class InputTextarea extends PureComponent {
 
 InputTextarea.propTypes = {
   className: PropTypes.string,
+  error: PropTypes.string,
   rows: PropTypes.number,
   cols: PropTypes.number,
   value: PropTypes.string,

@@ -1,3 +1,8 @@
+/*
+  A component that contains content for a topic with less detail, to be used in
+  /topics for list items
+*/
+
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
