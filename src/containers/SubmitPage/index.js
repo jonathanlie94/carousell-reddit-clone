@@ -60,10 +60,6 @@ class SubmitPage extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.props.dispatch(resetForm());
-  }
-
   _validateOnBlur() {
     if (this.props.title.length === 0) {
       this.setState({
@@ -84,11 +80,10 @@ class SubmitPage extends Component {
   }
 
   _createTopic() {
-    // Client-side validation for our form
-
     this.props
       .createTopic()
       .then(() => {
+        this.props.resetForm();
         this.props.history.push('/');
       })
       .catch(() => {});

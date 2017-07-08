@@ -4,6 +4,7 @@ import asyncComponent from 'components/AsyncComponent';
 import { Banner, Header } from 'components';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
+import Footer from 'containers/Footer';
 const PageNotFound = asyncComponent(() => import('components/PageNotFound'));
 const TopicsPage = asyncComponent(() => import('containers/TopicsPage'));
 const HomePage = asyncComponent(() => import('containers/HomePage'));
@@ -35,6 +36,8 @@ const App = props =>
       <Route path="/topics/:id" component={TopicsPage} />
       <Route component={PageNotFound} />
     </Switch>
+
+    <Footer />
   </Wrapper>;
 
 export default App;

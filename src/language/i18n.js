@@ -11,6 +11,7 @@ addLocaleData(enLocaleData);
 addLocaleData(idLocaleData);
 
 export const appLocales = ['en', 'id'];
+export const appLocalesName = ['English', 'Bahasa Indonesia'];
 
 export const formatTranslationMessages = (locale, messages) => {
   const defaultFormattedMessages =
