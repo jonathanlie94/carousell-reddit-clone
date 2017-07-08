@@ -1,4 +1,5 @@
 {
+  "components.PageNotFound.text": "Wups! Ga ada apa-apa disini.",
   "components.Paginator.nextPage": "lanjut",
   "components.Paginator.pageNumber": "Halaman {page}",
   "components.Paginator.previousPage": "sebelumnya",

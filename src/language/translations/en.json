@@ -1,4 +1,5 @@
 {
+  "components.PageNotFound.text": "Whoops! There's nothing here.",
   "components.Paginator.nextPage": "next",
   "components.Paginator.pageNumber": "Page {page}",
   "components.Paginator.previousPage": "previous",
