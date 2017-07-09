@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import asyncComponent from 'components/AsyncComponent';
 import { Banner, Header } from 'components';
 import Helmet from 'react-helmet';
@@ -24,7 +24,9 @@ const App = props =>
     </Helmet>
 
     <Header>
-      <Banner />
+      <Link to="/">
+        <Banner />
+      </Link>
     </Header>
 
     <Switch>
