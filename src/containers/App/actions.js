@@ -15,8 +15,8 @@ import {
 } from 'utils/sampleDataManager';
 import { fromJS } from 'immutable';
 
-const FETCH_DELAY = 500;
-const VOTE_DELAY = 100;
+const FETCH_DELAY = 200;
+const VOTE_DELAY = 50;
 
 export function loadTopics() {
   return {
