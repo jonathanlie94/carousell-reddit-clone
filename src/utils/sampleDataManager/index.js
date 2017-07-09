@@ -57,7 +57,7 @@ let data = {
     description:
       "Everything lines up. It's been more than 120 days since Orisa's debute, around this time Ana was released and it's the 4th of July. Today America celebrates the day they got their independence and I think it lines up perfectly with Overwatch. Right now Numbani is being attacked and still has to be freed from Doomfist. We are also supposed to be receiving season 2 of the Overwatch cinematics, I'm pretty sure we'll either get a teaser or a cinematic today.",
     created_at: new Date(2017, 2, 25),
-    votes: 0,
+    votes: 100,
   },
   8: {
     id: 8,
@@ -339,7 +339,7 @@ let data = {
       I however haven't seen much regarding the following sentence of the article, which to me has huge teasing potential.
     `,
     created_at: new Date(2017, 6, 1, 23),
-    votes: -123,
+    votes: 100,
   },
   41: {
     id: 41,
