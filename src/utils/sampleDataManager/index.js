@@ -175,10 +175,13 @@ let data = {
 
 // Similar to index, there is a detail that is omitted.
 export const getDataList = (page = 1, per_page = 20) => {
-  const dataIds = Object.keys(data).sort((a, b) => b - a);
+  const dataIds = Object.keys(data).sort((a, b) => {
+    return data[b].votes - data[a].votes;
+  });
   const upper = Math.ceil(per_page / dataIds.length) + page - 1;
   const res = {};
-  dataIds.slice((upper - 1) * per_page, upper * per_page).forEach(id => {
+  const slicedDataIds = dataIds.slice((upper - 1) * per_page, upper * per_page);
+  slicedDataIds.forEach(id => {
     res[id] = {
       ...data[id],
       description: undefined,
@@ -192,6 +195,7 @@ export const getDataList = (page = 1, per_page = 20) => {
       per_page,
       total: dataIds.length,
     },
+    orderedIds: slicedDataIds,
   };
 };
 

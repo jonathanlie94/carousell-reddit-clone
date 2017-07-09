@@ -24,6 +24,7 @@ describe('actions', () => {
         type: constants.LOAD_TOPICS_SUCCESS,
         topics: data.get('topics'),
         meta: data.get('meta'),
+        orderedIds: data.get('orderedIds'),
       },
     ];
     const store = mockStore({ topics: {} });

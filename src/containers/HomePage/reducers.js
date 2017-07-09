@@ -37,10 +37,7 @@ function homePageReducer(state = initialState, action) {
       return state
         .set(
           'topicIds',
-          action.topics
-            .map(t => t.get('id'))
-            .sortBy((item, key) => -Number(key))
-            .toList()
+          action.orderedIds,
         )
         .set('meta', action.meta);
     default:
