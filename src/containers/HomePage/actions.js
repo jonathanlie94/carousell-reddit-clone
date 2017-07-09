@@ -9,9 +9,13 @@ export function incrementPageLocal() {
 
 export function incrementPage() {
   return (dispatch, getState) => {
-    const page = getState().get('homePage').get('meta').get('page') + 1;
-    dispatch(incrementPageLocal());
-    dispatch(requestFetchTopics(page));
+    return new Promise((resolve, reject) => {
+      const page = getState().get('homePage').get('meta').get('page') + 1;
+      dispatch(incrementPageLocal());
+      dispatch(requestFetchTopics(page))
+        .then(() => resolve())
+        .catch(() => reject());
+    });
   };
 }
 
@@ -23,9 +27,13 @@ export function decrementPageLocal() {
 
 export function decrementPage() {
   return (dispatch, getState) => {
-    const page = getState().get('homePage').get('meta').get('page') - 1;
-    dispatch(decrementPageLocal());
-    dispatch(requestFetchTopics(page));
+    return new Promise((resolve, reject) => {
+      const page = getState().get('homePage').get('meta').get('page') - 1;
+      dispatch(decrementPageLocal());
+      dispatch(requestFetchTopics(page))
+        .then(() => resolve())
+        .catch(() => reject());
+    });
   };
 }
 
