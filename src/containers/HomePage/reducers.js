@@ -17,10 +17,7 @@ function homePageReducer(state = initialState, action) {
   switch (action.type) {
     case RESET_PAGE:
       return state
-        .mergeIn(
-          ['meta'],
-          state.get('meta').set('page', 1)
-        )
+        .mergeIn(['meta'], state.get('meta').set('page', 1))
         .set('topicIds', List([]));
     case INCREMENT_PAGE:
       return state

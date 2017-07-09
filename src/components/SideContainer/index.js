@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
+import { media } from 'ui/helpers';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
@@ -12,8 +13,12 @@ const Wrapper = styled.div`
   color: ${theme.colors.black};
   min-width: 320px;
   height: auto;
-  padding: 12px 12px 12px 12px;
+  padding: 12px 12px 12px 0;
   position: relative;
+  ${media.mobile`
+    display: none;
+    visibility: hidden;
+  `};
 `;
 
 class SideContainer extends Component {

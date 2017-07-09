@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: auto;
   min-height: 80rem;
-  margin: 12px 0 96px 12px;
+  margin: 12px 12px 96px 12px;
   position: relative;
 `;
 
