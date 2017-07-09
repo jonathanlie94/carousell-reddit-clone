@@ -29,10 +29,15 @@ The ejected app has a lot of things setup from the get-go: development workflow,
 
 The root folder contains the following files/folders:
 
- - *config*: contains config files for webpack, polyfills, jest, etc. created by create-react-app
- - *public*: the public folder, contains html, images, etc
- - *scripts*: scripts to start, build, and test the project, created by create-react-app
- - *src*: where most of the development happen, contains the actual app code
+ - *config/*: contains config files for webpack, polyfills, jest, etc. created by create-react-app
+ - *public/*: the public folder, contains html, images, etc
+ - *scripts/*: scripts to start, build, and test the project, created by create-react-app
+ - *src/*: where most of the development happen, contains the actual app code
+ - *.eslintrc.js*: contains some rules that I chose to customize over existing rules
+ - *.travis.yml*: configuration for Travis
+ - *.gitignore*: files/folders ignored by git
+ - *Procfile*: script executed upon deploying to Heroku
+ - *server.js*: a quick Express server to listen to PORT and redirect all requests to /index.html
 
 The files that are last created through the following commit message are not touched by me at all:
 ```
@@ -40,9 +45,19 @@ The files that are last created through the following commit message are not tou
 ```
 Some changes to the webpack config were made to suit the project's folder structure and needs, such as enabling absolute path imports.
 
+[prettier](https://github.com/prettier/prettier) is used to format the code.
+
 Then CI was setup in [Travis](https://travis-ci.org/jonathanlie94/reddit-clone-v1), with automatic deployment to Heroku if build passes.
 
+There are several scripts inside package.json, and they do these things:
 
+- *start*: Start up development server
+- *build*: Create optimized build to /build
+- *test*: Run tests
+- *test-watch*: Watch mode for test files
+- *prettier*: Run prettier on all files
+- *extract-i18n*: Extract all defined messages to locale translations file, explained later in i18n section
+- *postinstall*: Automatically run after postinstall (used in Heroku to auto build, even though it is also run locally after first install)
 
 ----------
 ## App functionality
