@@ -37,7 +37,11 @@ class VoteWidget extends Component {
   render() {
     return (
       <Wrapper>
-        <ArrowIcon className="material-icons" onClick={this.props.onUpvote} ref="upvote">
+        <ArrowIcon
+          className="material-icons"
+          onClick={this.props.onUpvote}
+          ref="upvote"
+        >
           arrow_drop_up
         </ArrowIcon>
         {this.props.count !== 0
@@ -45,7 +49,11 @@ class VoteWidget extends Component {
               {this.props.count}
             </div>
           : <ZeroCountIcon className="material-icons">lens</ZeroCountIcon>}
-        <ArrowIcon className="material-icons" onClick={this.props.onDownvote} ref="downvote">
+        <ArrowIcon
+          className="material-icons"
+          onClick={this.props.onDownvote}
+          ref="downvote"
+        >
           arrow_drop_down
         </ArrowIcon>
       </Wrapper>

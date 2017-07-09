@@ -17,7 +17,7 @@ describe('<RootContainer />', () => {
   });
 
   it('should match previous snapshot', () => {
-    const renderedComponent = shallow(<RootContainer  />);
+    const renderedComponent = shallow(<RootContainer />);
     const tree = toJSON(renderedComponent);
     expect(tree).toMatchStyledComponentsSnapshot();
   });

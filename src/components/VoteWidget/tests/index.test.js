@@ -8,14 +8,12 @@ describe('<VoteWidget />', () => {
   it('should handle upvote correctly', () => {
     let count = 2;
     const onUpvote = v => {
-      count ++;
+      count++;
     };
     const renderedComponent = mount(
       <VoteWidget onUpvote={onUpvote} count={count} />
     );
-    renderedComponent
-      .ref('upvote')
-      .simulate('click');
+    renderedComponent.ref('upvote').simulate('click');
 
     expect(count).toEqual(3);
   });
@@ -23,28 +21,26 @@ describe('<VoteWidget />', () => {
   it('should handle downvote correctly', () => {
     let count = 2;
     const onDownvote = v => {
-      count --;
+      count--;
     };
     const renderedComponent = mount(
       <VoteWidget onDownvote={onDownvote} count={count} />
     );
-    renderedComponent
-      .ref('downvote')
-      .simulate('click');
+    renderedComponent.ref('downvote').simulate('click');
 
     expect(count).toEqual(1);
   });
 
   it('should match previous snapshot', () => {
-    const zeroComponent = mount(<VoteWidget count={0}/>);
+    const zeroComponent = mount(<VoteWidget count={0} />);
     const zero = toJSON(zeroComponent);
     expect(zero).toMatchStyledComponentsSnapshot();
 
-    const positiveComponent = mount(<VoteWidget count={1}/>);
+    const positiveComponent = mount(<VoteWidget count={1} />);
     const positive = toJSON(positiveComponent);
     expect(positive).toMatchStyledComponentsSnapshot();
 
-    const negativeComponent = mount(<VoteWidget count={-1}/>);
+    const negativeComponent = mount(<VoteWidget count={-1} />);
     const negative = toJSON(negativeComponent);
     expect(negative).toMatchStyledComponentsSnapshot();
   });

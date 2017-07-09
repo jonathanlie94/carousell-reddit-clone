@@ -17,7 +17,7 @@ describe('<ListItem />', () => {
   });
 
   it('should match previous snapshot', () => {
-    const renderedComponent = mount(<ListItem  />);
+    const renderedComponent = mount(<ListItem />);
     const tree = toJSON(renderedComponent);
     expect(tree).toMatchStyledComponentsSnapshot();
   });

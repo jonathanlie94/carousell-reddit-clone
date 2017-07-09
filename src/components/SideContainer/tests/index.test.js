@@ -17,7 +17,7 @@ describe('<SideContainer />', () => {
   });
 
   it('should match previous snapshot', () => {
-    const renderedComponent = shallow(<SideContainer  />);
+    const renderedComponent = shallow(<SideContainer />);
     const tree = toJSON(renderedComponent);
     expect(tree).toMatchStyledComponentsSnapshot();
   });
