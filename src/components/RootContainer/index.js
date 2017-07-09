@@ -7,12 +7,19 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
 import PropTypes from 'prop-types';
+import { media } from 'ui/helpers';
 
 const Wrapper = styled.div`
   background-color: ${theme.colors.grey};
   display: flex;
   flex-direction: row;
   position: relative;
+  ${media.mobile`
+    flex-direction: column;
+  `};
+  ${media.tablet`
+    flex-direction: column;
+  `};
 `;
 
 class RootContainer extends Component {

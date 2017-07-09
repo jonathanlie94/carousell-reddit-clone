@@ -31,7 +31,7 @@ const StyledListItem = styled(ListItem)`
 
 const StyledPaginator = styled(Paginator)`
   position: absolute;
-  bottom: -3.75rem;
+  bottom: 1.25rem;
 `;
 
 class HomePage extends Component {

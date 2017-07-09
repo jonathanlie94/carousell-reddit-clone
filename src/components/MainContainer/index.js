@@ -11,10 +11,10 @@ import PropTypes from 'prop-types';
 const Wrapper = styled.div`
   background-color: ${theme.colors.grey};
   color: ${theme.colors.black};
-  width: 100%;
   height: auto;
+  flex: 1;
   min-height: 80rem;
-  margin: 12px 12px 96px 12px;
+  padding: 12px 12px 96px 12px;
   position: relative;
 `;
 

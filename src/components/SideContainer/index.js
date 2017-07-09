@@ -16,8 +16,10 @@ const Wrapper = styled.div`
   padding: 12px 12px 12px 0;
   position: relative;
   ${media.mobile`
-    display: none;
-    visibility: hidden;
+    padding: 12px 12px 12px 12px;
+  `};
+  ${media.tablet`
+    padding: 12px 12px 12px 12px;
   `};
 `;
 
