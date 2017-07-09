@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export function noselect(width) {
   return `
@@ -14,17 +14,17 @@ export function noselect(width) {
 export const media = {
   mobile: (...args) => css`
     @media (max-width: 480px) {
-      ${ css(...args) }
+      ${css(...args)}
     }
   `,
   tablet: (...args) => css`
     @media (min-width: 481px) and (max-width: 768px) {
-      ${ css(...args) }
+      ${css(...args)}
     }
   `,
   desktop: (...args) => css`
     @media (min-width: 769px) {
-      ${ css(...args) }
+      ${css(...args)}
     }
   `,
-}
+};

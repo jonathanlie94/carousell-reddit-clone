@@ -34,12 +34,7 @@ function homePageReducer(state = initialState, action) {
         )
         .set('topicIds', List([]));
     case LOAD_TOPICS_SUCCESS:
-      return state
-        .set(
-          'topicIds',
-          action.orderedIds,
-        )
-        .set('meta', action.meta);
+      return state.set('topicIds', action.orderedIds).set('meta', action.meta);
     default:
       return state;
   }

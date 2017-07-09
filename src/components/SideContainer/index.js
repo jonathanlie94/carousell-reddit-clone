@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   `};
   ${media.desktop`
     min-width: 320px;
-  `}
+  `};
 `;
 
 class SideContainer extends Component {
