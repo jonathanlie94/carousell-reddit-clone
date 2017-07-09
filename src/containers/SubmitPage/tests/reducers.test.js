@@ -1,7 +1,6 @@
 import reducer from '../reducers';
 import * as constants from '../constants';
 import { fromJS } from 'immutable';
-import * as sampleDataManager from 'utils/sampleDataManager';
 
 describe('submitPageReducer', () => {
   it('should return the initial state', () => {
