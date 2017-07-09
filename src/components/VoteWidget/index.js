@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   ${noselect()} display: inline-flex;
   flex-direction: column;
   text-align: center;
-  width: auto;
+  min-width: 3.25rem;
 `;
 
 const ArrowIcon = styled.i`

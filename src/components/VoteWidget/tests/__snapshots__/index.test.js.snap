@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<VoteWidget /> should match previous snapshot 1`] = `
-.eEjXue {
+.gAjEpo {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -19,7 +19,7 @@ exports[`<VoteWidget /> should match previous snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
-  width: auto;
+  min-width: 3.25rem;
 }
 
 .fnsJyR {
@@ -43,7 +43,7 @@ exports[`<VoteWidget /> should match previous snapshot 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eEjXue"
+      className="sc-bdVaJa gAjEpo"
     >
       <styled.i
         className="material-icons"
@@ -78,7 +78,7 @@ exports[`<VoteWidget /> should match previous snapshot 1`] = `
 `;
 
 exports[`<VoteWidget /> should match previous snapshot 2`] = `
-.eEjXue {
+.gAjEpo {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -96,7 +96,7 @@ exports[`<VoteWidget /> should match previous snapshot 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
-  width: auto;
+  min-width: 3.25rem;
 }
 
 .fnsJyR {
@@ -114,7 +114,7 @@ exports[`<VoteWidget /> should match previous snapshot 2`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eEjXue"
+      className="sc-bdVaJa gAjEpo"
     >
       <styled.i
         className="material-icons"
@@ -143,7 +143,7 @@ exports[`<VoteWidget /> should match previous snapshot 2`] = `
 `;
 
 exports[`<VoteWidget /> should match previous snapshot 3`] = `
-.eEjXue {
+.gAjEpo {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -161,7 +161,7 @@ exports[`<VoteWidget /> should match previous snapshot 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
-  width: auto;
+  min-width: 3.25rem;
 }
 
 .fnsJyR {
@@ -179,7 +179,7 @@ exports[`<VoteWidget /> should match previous snapshot 3`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eEjXue"
+      className="sc-bdVaJa gAjEpo"
     >
       <styled.i
         className="material-icons"
