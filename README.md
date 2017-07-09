@@ -78,6 +78,9 @@ Here are the assumptions I made about the app functionalities:
 ----------
 ## Design decisions
 
+### Why React
+I decided to use React because I have about 1.5 years of experience using it and have been quite comfortable with the framework.
+
 ### Page Layout
 I decided to not use a CSS framework and went with simple responsive CSS for the page. The app is divided into different sections.
 
@@ -95,12 +98,13 @@ For this app, the logic of code splitting is such that as the imported component
 
 ### In-memory Data
 I decided to use [Redux](https://github.com/reactjs/react-redux), coupled with [ImmutableJS](https://github.com/facebook/immutable-js) for predictability, for the data and state management.
+I don't mind learning new libraries, as before using Redux I have also used a flux library (Reflux) before for quite some time and the core concept of uni-directional flow of data is similar, but I have decided to stick to a library I'm better at using.
 A *sampleDataManager.js* mocks a backend and stores all of the topics, and any request made by actions concerning topics (upvote/downvote, fetch, create) all go through this data manager.
-There is also a slight delay in each action that makes requests to the data manager, in order to mock the behavior of a real-world async request.
+There is also a slight delay in each action that makes requests to the data manager, in order to mock the behavior of a real-world network call.
 
 The usage of ImmutableJS, as its name suggests, is to enforce immutability on our data. My decision was such that any data in between actions until components should be in ImmutableJS form. Meaning to say, any data fetched should be first converted to ImmutableJS data format, and passed around components as an ImmutableJS data format as well (with the exception of primitives).
 
-Even though this resulted in longer codes, it helps a lot in making sense of what data the reducers hold. Handling actions also become harder, as we cannot use ES6 spread operator most of the time, but it is worth implementing in my opinion.
+Even though this resulted in longer codes, it helps a lot in making sense of what data the reducers hold. Handling actions also become harder, as we cannot use ES6 features such as spread operator, but it is worth implementing in my opinion.
 
 Let's go through each reducer quickly:
 
@@ -144,6 +148,8 @@ A typical single containers folder content looks like this:
  - *reducers.js*: Reducers scoped to the container
  - *messages.js*: Messages defined for i18n
 
+ I decided to use component-container structure because it becomes easy to think about what a component should do, and the concept of reusable components come through naturally. By letting the containers do all the logic, we can try making components a pure as possible.
+
 ### CSS
 I had a choice to use BEM structure, CSS modules, or styled-components.
 In the end, I decided to use [styled-components](https://github.com/styled-components/styled-components) and really liked it as they enable a clear separation of CSS and React components, resulting in code that are easier to read. Now we do not need to care about classnames anymore.
@@ -153,19 +159,19 @@ You might notice that there is still css-loader package installed by create-reac
 #### UI
 
 - */src/ui/global.js* - Global CSS injected at the entry point of the app
-- */src/ui/helpers.js* - Reusable CSS and media query
+- */src/ui/helpers.js* - Reusable CSS and media query -> see example usage in SideContainer, pretty neat :D
 - */src/ui/theme.js* -  Global definitions for colors, margins, fontSizes
 
 
 ### Internationalization
 I used [React-Intl](https://github.com/yahoo/react-intl) for i18n. There were some scripts from [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate) that are quite useful, so those scripts were copied and modified too. They are:
 
- - */src/language/extract-i18n.js*: Running this script extracts any message definition throughout the project and groups them inside */src/language/translations/LOCALE.json* . All default translations are put in the default locale file, for example en.json / id.json.
+ - */src/language/extract-i18n.js*: Running this script extracts any message definition throughout the project and groups them inside */src/language/translations/LOCALE.json* . All default translations are put in the default locale file, for example en.json / id.json. Then we have to translate the empty translations manually.
  - */src/language/i18n.js*: Initializes localeData into the browser and exports translations.
 
 ### Testing
 Tests were written for most of the components, some utils, and the App actions and reducers.
-[Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://github.com/facebook/jest) are used for the tests. [jest-styled-components](https://github.com/styled-components) also helped in testing components that are wrapped in a Styled Component, as well as snapshot testing for components.
+[Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://github.com/facebook/jest) are used for the tests. [jest-styled-components](https://github.com/styled-components) also helped in testing components that are wrapped in a Styled Component, as well as snapshot testing for components. Check the tests out inside */tests* folder of each individual folder.
 [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store) is used to mock stores when testing actions.
 Do note that some of the files do not have tests yet, especially *containers*, as such there are many improvements that can be done to make the tests more robust in the future.
 
