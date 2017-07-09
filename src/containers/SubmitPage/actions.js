@@ -29,7 +29,7 @@ export function createTopic() {
   };
 }
 
-export function requestCreateTopic(form) {
+export function requestCreateTopic() {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       dispatch(createTopic());
