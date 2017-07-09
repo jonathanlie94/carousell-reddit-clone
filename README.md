@@ -73,7 +73,6 @@ Here are the assumptions I made about the app functionalities:
  - A user can upvote or downvote a topic, submit a new topic, view a topic's details, or view the list of topics, paginated at 20 per page.
  - A topic contains a title and description, where title is required, but description is not. Vote will start at 0 for a new topic.
  - A topic cannot be edited or deleted by anyone, since there is no user authentication.
- - User can opt to view the app in another language (currently only supports English and Bahasa Indonesia).
 
 ----------
 ## Design decisions
@@ -91,7 +90,7 @@ I decided to not use a CSS framework and went with simple responsive CSS for the
 |	Footer				|	<span>				|
 |	<span>				|	<span>				|
 
-SideContainer will shift to the bottom, just below footer, if the screen size goes to tablet screen size.
+SideContainer will shift to the bottom, just above footer, if the screen size goes to tablet screen size.
 
 ### Code Splitting
 For this app, the logic of code splitting is such that as the imported component is being loaded through the network, a fallback component is rendered. The related file is located at */src/components/AsyncComponent/index.js*.
