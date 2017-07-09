@@ -8,7 +8,7 @@ import {
 import { create } from 'utils/sampleDataManager';
 import { fromJS } from 'immutable';
 
-const SUBMIT_DELAY = 500;
+const SUBMIT_DELAY = 200;
 
 export function resetForm() {
   return {
