@@ -10,7 +10,7 @@ describe('appReducer', () => {
         loading: false,
         error: false,
         topics: {},
-      }),
+      })
     );
   });
 
