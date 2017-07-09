@@ -90,6 +90,9 @@ I decided to not use a CSS framework and went with simple responsive CSS for the
 
 SideContainer will shift to the bottom, just below footer, if the screen size goes to tablet screen size.
 
+### Code Splitting
+For this app, the logic of code splitting is such that as the imported component is being loaded through the network, a fallback component is rendered. The related file is located at */src/components/AsyncComponent/index.js*.
+
 ### In-memory Data
 I decided to use [Redux](https://github.com/reactjs/react-redux), coupled with [ImmutableJS](https://github.com/facebook/immutable-js) for predictability, for the data and state management.
 A *sampleDataManager.js* mocks a backend and stores all of the topics, and any request made by actions concerning topics (upvote/downvote, fetch, create) all go through this data manager.
