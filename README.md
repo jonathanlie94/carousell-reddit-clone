@@ -176,4 +176,6 @@ Do note that some of the files do not have tests yet, especially *containers*, a
 
 I tried many new libraries during this project and honestly had fun with it. React Router v4 introduced new concept that enables routes to be matched as components are rendered, and I find that really cool. I never used ImmutableJS in production before, but I think that it is probably the way to go in developing React apps with Redux. I did not manage to complete all the tests, but I would love to explore more on it in the future.
 
+Even though a nice webpage design is not needed, I feel that in order to showcase good practices on developing web apps in general, some degree of aesthetics and responsiveness is needed, which is why I took further steps to build a better looking website. It also proves how maintainable a code base is as it resembles a real-world app more closely in my opinion.
+
 There are still many things that can be improved upon!
