@@ -11,9 +11,9 @@ import {
 } from './constants';
 
 /**
-  The initial state of the App.
-  Think of the states here as a global state.
-  In this case, things such as loading and storing the posts are processed here.
+  The global state of our app. It store map of previously loaded topics, a loading flag, and error flag.
+  Loading and error are not used in this app right now, but it can be used to display spinners or
+  global error messages such as to warn users if their network is disconnected.
 
   You might notice that the topics are stored here, but not all actions related to topic are stored here.
 
