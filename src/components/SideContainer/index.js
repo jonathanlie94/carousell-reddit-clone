@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 const Wrapper = styled.div`
   background-color: ${theme.colors.grey};
   color: ${theme.colors.black};
-  min-width: 320px;
   height: auto;
   padding: 12px 12px 12px 0;
   position: relative;
@@ -21,6 +20,9 @@ const Wrapper = styled.div`
   ${media.tablet`
     padding: 12px 12px 12px 12px;
   `};
+  ${media.desktop`
+    min-width: 320px;
+  `}
 `;
 
 class SideContainer extends Component {
