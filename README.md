@@ -143,7 +143,7 @@ A typical single containers folder content looks like this:
  - *tests/*: Tests for the containers
  - *index.js*: Entry point of the container
  - *actions.js*: Actions scoped to the container
- - *constants.js*: Action types for the actions
+ - *constants.js*: Action types for the actions. This enables quick lookup of available action types and prevent simple typos (missing an 's' or such).
  - *reducers.js*: Reducers scoped to the container
  - *messages.js*: Messages defined for i18n
 

@@ -24,8 +24,11 @@ export function loadTopics() {
   };
 }
 
-// In a real-world app, we use fetch() here to retrieve actual data from a server.
-// For this sample app, we use a timeout to mimic the async behaviour of network calls.
+/*
+  Actions that have side-effects have name convention request**.js (starts with request).
+  In a real-world app, we use fetch() here to retrieve actual data from a server.
+  For this sample app, we use a timeout to mimic the async behaviour of network calls.
+*/
 export function requestFetchTopics(page, per_page) {
   return dispatch => {
     return new Promise((resolve, reject) => {
