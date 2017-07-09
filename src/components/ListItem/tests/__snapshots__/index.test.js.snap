@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListItem /> should match previous snapshot 1`] = `
+.dyiVyr {
+  background-color: #FFF;
+  border-bottom: 1px solid #C8C8C8;
+  min-height: 4rem;
+  padding: 16px;
+}
+
+<ListItem>
+  <styled.div>
+    <div
+      className="sc-bdVaJa dyiVyr"
+    />
+  </styled.div>
+</ListItem>
+`;

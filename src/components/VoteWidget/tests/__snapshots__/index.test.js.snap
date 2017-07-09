@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VoteWidget /> should match previous snapshot 1`] = `
+.eEjXue {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+}
+
+.fnsJyR {
+  color: #C8C8C8;
+  font-size: 32px !important;
+  cursor: pointer;
+}
+
+.fnsJyR:hover {
+  opacity: 0.5;
+}
+
+.heBpaD {
+  font-size: 12px !important;
+  margin: 3px 0;
+  color: #C8C8C8;
+}
+
+<VoteWidget
+  count={0}
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa eEjXue"
+    >
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_up
+        </i>
+      </styled.i>
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-htpNat heBpaD"
+        >
+          lens
+        </i>
+      </styled.i>
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_down
+        </i>
+      </styled.i>
+    </div>
+  </styled.div>
+</VoteWidget>
+`;
+
+exports[`<VoteWidget /> should match previous snapshot 2`] = `
+.eEjXue {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+}
+
+.fnsJyR {
+  color: #C8C8C8;
+  font-size: 32px !important;
+  cursor: pointer;
+}
+
+.fnsJyR:hover {
+  opacity: 0.5;
+}
+
+<VoteWidget
+  count={1}
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa eEjXue"
+    >
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_up
+        </i>
+      </styled.i>
+      <div>
+        1
+      </div>
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_down
+        </i>
+      </styled.i>
+    </div>
+  </styled.div>
+</VoteWidget>
+`;
+
+exports[`<VoteWidget /> should match previous snapshot 3`] = `
+.eEjXue {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+}
+
+.fnsJyR {
+  color: #C8C8C8;
+  font-size: 32px !important;
+  cursor: pointer;
+}
+
+.fnsJyR:hover {
+  opacity: 0.5;
+}
+
+<VoteWidget
+  count={-1}
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa eEjXue"
+    >
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_up
+        </i>
+      </styled.i>
+      <div>
+        -1
+      </div>
+      <styled.i
+        className="material-icons"
+      >
+        <i
+          className="material-icons sc-bwzfXH fnsJyR"
+        >
+          arrow_drop_down
+        </i>
+      </styled.i>
+    </div>
+  </styled.div>
+</VoteWidget>
+`;

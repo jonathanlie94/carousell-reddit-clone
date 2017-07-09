@@ -1,6 +1,7 @@
 /*
   A component that contains content for a topic with full detail, to be used in
-  /topics/:id
+  /topics/:id . We can argue that the component is not pure here, because it uses some other
+  component. We can expand the file structure further to components, containers, and modules.
 */
 
 import React, { Component } from 'react';

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputText /> should match previous snapshot 1`] = `
+.laCcUg {
+  font-family: Arial, sans-serif;
+  border-radius: 4px;
+  padding: 0.5rem 0.25rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #C8C8C8;
+  background-color: #FFF;
+  outline-color: #00C3FF;
+  outline-width: 4px;
+}
+
+<InputText>
+  <div>
+    <styled.input
+      onChange={[Function]}
+      type="text"
+    >
+      <input
+        className="sc-bdVaJa laCcUg"
+        onChange={[Function]}
+        type="text"
+      />
+    </styled.input>
+  </div>
+</InputText>
+`;

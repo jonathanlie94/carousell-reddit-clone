@@ -35,6 +35,7 @@ class InputTextarea extends PureComponent {
         <StyledTextarea
           cols={this.props.cols}
           rows={this.props.rows}
+          ref="input"
           type="text"
           onBlur={this.props.onBlur}
           onChange={e => this.props.onChange(e.target.value)}

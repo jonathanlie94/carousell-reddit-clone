@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListView /> should match previous snapshot 1`] = `
+.cqALui {
+  border-radius: 8px;
+  border: 1px solid #C8C8C8;
+  overflow: hidden;
+}
+
+<ListView>
+  <styled.div>
+    <div
+      className="sc-bdVaJa cqALui"
+    />
+  </styled.div>
+</ListView>
+`;

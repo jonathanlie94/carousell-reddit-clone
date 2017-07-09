@@ -33,11 +33,11 @@ export default function asyncComponent(importComponent, fallbackComponent) {
         RootContainer and MainContainer is rendered to prevent layout from breaking
         when the component is loading asynchronously.
       */
-      const fallbackC = fallbackComponent || (
+      const fallbackC =
+        fallbackComponent ||
         <RootContainer>
           <MainContainer />
-        </RootContainer>
-      )
+        </RootContainer>;
 
       return C ? <C {...this.props} /> : fallbackC;
     }

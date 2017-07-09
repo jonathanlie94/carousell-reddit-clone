@@ -2,7 +2,6 @@
   A widget that displays the upvote button, vote count, and downvote button.
 */
 
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -38,7 +37,7 @@ class VoteWidget extends Component {
   render() {
     return (
       <Wrapper>
-        <ArrowIcon className="material-icons" onClick={this.props.onUpvote}>
+        <ArrowIcon className="material-icons" onClick={this.props.onUpvote} ref="upvote">
           arrow_drop_up
         </ArrowIcon>
         {this.props.count !== 0
@@ -46,7 +45,7 @@ class VoteWidget extends Component {
               {this.props.count}
             </div>
           : <ZeroCountIcon className="material-icons">lens</ZeroCountIcon>}
-        <ArrowIcon className="material-icons" onClick={this.props.onDownvote}>
+        <ArrowIcon className="material-icons" onClick={this.props.onDownvote} ref="downvote">
           arrow_drop_down
         </ArrowIcon>
       </Wrapper>

@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import 'jest-styled-components';
-import SideContainer from '../';
+import RootContainer from '../';
 
-describe('<SideContainer />', () => {
+describe('<RootContainer />', () => {
   it('should render children when passed in', () => {
     const renderedComponent = shallow(
-      <SideContainer>
+      <RootContainer>
         <div className="unique-class-name" />
-      </SideContainer>
+      </RootContainer>
     );
     expect(
       renderedComponent.contains(<div className="unique-class-name" />)
@@ -17,7 +17,7 @@ describe('<SideContainer />', () => {
   });
 
   it('should match previous snapshot', () => {
-    const renderedComponent = shallow(<SideContainer  />);
+    const renderedComponent = shallow(<RootContainer  />);
     const tree = toJSON(renderedComponent);
     expect(tree).toMatchStyledComponentsSnapshot();
   });

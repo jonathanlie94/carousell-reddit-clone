@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match previous snapshot 1`] = `
+.ctpUMM {
+  width: 100%;
+  height: auto;
+}
+
+<div
+  className="sc-bdVaJa ctpUMM"
+/>
+`;

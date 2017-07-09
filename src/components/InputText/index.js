@@ -36,13 +36,14 @@ class InputText extends PureComponent {
       <div className={this.props.className}>
         <StyledInput
           className={this.props.className}
+          ref="input"
           type="text"
           onBlur={this.props.onBlur}
           onChange={e => this.props.onChange(e.target.value)}
           value={this.props.value}
         />
         {this.props.error
-          ? <ErrorMessage>
+          ? <ErrorMessage ref="error">
               {this.props.error}
             </ErrorMessage>
           : false}

@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { theme } from 'ui';
 
 const Wrapper = styled.div`
@@ -37,16 +36,14 @@ const ColoredTitleInnerText = styled.span`color: ${theme.colors.darkergrey};`;
 class Banner extends Component {
   render() {
     return (
-      <Link to="/">
-        <Wrapper image="/banner.jpg">
-          <TitleText>
-            REDDIT
-            <ColoredTitleInnerText>CLONE</ColoredTitleInnerText>
-          </TitleText>
+      <Wrapper image="/banner.jpg">
+        <TitleText>
+          REDDIT
+          <ColoredTitleInnerText>CLONE</ColoredTitleInnerText>
+        </TitleText>
 
-          {this.props.children}
-        </Wrapper>
-      </Link>
+        {this.props.children}
+      </Wrapper>
     );
   }
 }

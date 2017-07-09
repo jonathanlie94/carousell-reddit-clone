@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner /> should match previous snapshot 1`] = `
+.dKaCtQ {
+  background-color: #00C3FF;
+  background-image: url(/banner.jpg);
+  background-size: cover;
+  color: #C8C8C8;
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.laDvvZ {
+  background-color: transparent;
+  font-family: Overwatch;
+  font-style: italic;
+  text-decoration: none;
+  text-shadow: 0 1px 1px;
+  color: #C8C8C8;
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 2rem;
+}
+
+.dEhpst {
+  color: #666;
+}
+
+<div
+  className="sc-bdVaJa dKaCtQ"
+>
+  <styled.span>
+    <span
+      className="sc-bwzfXH laDvvZ"
+    >
+      REDDIT
+      <styled.span>
+        <span
+          className="sc-htpNat dEhpst"
+        >
+          CLONE
+        </span>
+      </styled.span>
+    </span>
+  </styled.span>
+</div>
+`;

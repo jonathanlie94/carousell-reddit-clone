@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should match previous snapshot 1`] = `
+.kaRKrY {
+  height: auto;
+  text-align: center;
+  font-family: Overwatch;
+  font-size: 1.25rem;
+  outline-width: 0;
+  padding-left: 0.75rem;
+  padding-right: 1rem;
+  color: #FFF;
+  border-color: transparent;
+  border-radius: 4px;
+  -webkit-transform: skewX(-.25rad);
+  -ms-transform: skewX(-.25rad);
+  transform: skewX(-.25rad);
+  background-color: #00C3FF;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.kaRKrY > span {
+  -webkit-transform: skewX(.25rad);
+  -ms-transform: skewX(.25rad);
+  transform: skewX(.25rad);
+  display: block;
+}
+
+.kaRKrY:focus:not([disabled]),
+.kaRKrY:hover:not([disabled]) {
+  opacity: .625;
+}
+
+.kaRKrY:disabled {
+  opacity: .25;
+}
+
+<button
+  className="sc-bdVaJa kaRKrY"
+  color="#FFF"
+  onClick={null}
+>
+  <span />
+</button>
+`;
