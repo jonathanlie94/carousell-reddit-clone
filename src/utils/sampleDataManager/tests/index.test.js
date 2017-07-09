@@ -16,26 +16,29 @@ describe('sampleDataManager', () => {
     expect(Object.keys(sampleDataManager.getDataList(1).topics).length).toEqual(
       20
     );
-    expect(sampleDataManager.getDataList(1).meta.total).toEqual(20);
+    expect(sampleDataManager.getDataList(1).meta.total).toEqual(41);
   });
 
   it('should be able to add new item', () => {
     sampleDataManager.create({ title: 'Title 1', description: '' });
-    expect(sampleDataManager.getDataList(1).meta.total).toEqual(21);
+    expect(sampleDataManager.getDataList(1).meta.total).toEqual(42);
   });
 
-  it('should be able to get second page after adding new item', () => {
+  it('should be able to get last page after adding new item', () => {
     sampleDataManager.create({ title: 'Title 2', description: '' });
     expect(Object.keys(sampleDataManager.getDataList(1).topics).length).toEqual(
       20
     );
     expect(Object.keys(sampleDataManager.getDataList(2).topics).length).toEqual(
-      2
+      20
+    );
+    expect(Object.keys(sampleDataManager.getDataList(3).topics).length).toEqual(
+      3
     );
   });
 
   it('should reject if title is more than 255 characters', () => {
-    expect(sampleDataManager.getDataList(1).meta.total).toEqual(22);
+    expect(sampleDataManager.getDataList(1).meta.total).toEqual(43);
     expect(
       sampleDataManager.create({
         title:
@@ -43,7 +46,7 @@ describe('sampleDataManager', () => {
         description: '',
       }).title
     ).toEqual('Title is too long!');
-    expect(sampleDataManager.getDataList(1).meta.total).toEqual(22);
+    expect(sampleDataManager.getDataList(1).meta.total).toEqual(43);
   });
 
   it('should be able to upvote correctly', () => {

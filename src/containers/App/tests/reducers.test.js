@@ -175,7 +175,7 @@ describe('appReducer', () => {
   });
 
   it('should handle LOAD_TOPIC_ERROR', () => {
-    const data = sampleDataManager.getData(21);
+    const data = sampleDataManager.getData(50);
 
     expect(
       reducer(
