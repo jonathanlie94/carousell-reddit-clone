@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { theme } from 'ui';
-import { media } from 'ui/helpers';
+import { media, noselect } from 'ui/helpers';
 
 const Wrapper = styled.div`
   background-color: ${theme.colors.blue};
@@ -33,6 +33,7 @@ const TitleText = styled.span`
   ${media.mobile`
     font-size: 4rem;
   `};
+  ${noselect()};
 `;
 
 const ColoredTitleInnerText = styled.span`color: ${theme.colors.darkergrey};`;
