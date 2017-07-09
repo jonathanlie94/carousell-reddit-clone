@@ -3,7 +3,7 @@ import * as constants from '../constants';
 import * as appConstants from 'containers/App/constants';
 import { fromJS } from 'immutable';
 
-describe('submitPageReducer', () => {
+describe('homePageReducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(
       fromJS({
