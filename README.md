@@ -1,5 +1,5 @@
 
-#Reddit Clone V1
+# Reddit Clone V1
 
 A reddit clone web app where users are able to view and submit topics, and upvote or downvote them.
 
@@ -8,7 +8,7 @@ A reddit clone web app where users are able to view and submit topics, and upvot
 Check out the app live [here](http://reddit-clone-v1.herokuapp.com/).
 
 ----------
-##Quick Start
+## Quick Start
 
 node version: 6.11.0
 npm version: 3.10.10
@@ -18,13 +18,13 @@ Clone the repo and run the following commands:
 npm install
 npm start
 ```
-You should be automatically redirected to [localhost:8000](localhost:8000).
+You should be automatically redirected to [localhost:8000](http://localhost:8000).
 
 
 ----------
-##Setup
+## Setup
 
-[Create React App](github.com/facebook/create-react-app) was used to generate a runnable React project from the get-go. The project was then immediately ejected, since the project is more customizable that way and it more accurately represents real world React apps nowadays.
+[Create React App](https://github.com/facebookincubator/create-react-app) was used to generate a runnable React project from the get-go. The project was then immediately ejected, since the project is more customizable that way and it more accurately represents real world React apps nowadays.
 The ejected app has a lot of things setup from the get-go: development workflow, build script, polyfills, CSS autoprefixer, default lint rules, and many others, therefore it was a great starting point for a new React app.
 
 The root folder contains the following files/folders:
@@ -40,12 +40,12 @@ The files that are last created through the following commit message are not tou
 ```
 Some changes to the webpack config were made to suit the project's folder structure and needs, such as enabling absolute path imports.
 
-Then CI was setup in [Travis](travis-ci.org/jonathanlie94/reddit-clone-v1), with automatic deployment to Heroku if build passes.
+Then CI was setup in [Travis](https://travis-ci.org/jonathanlie94/reddit-clone-v1), with automatic deployment to Heroku if build passes.
 
 
 
 ----------
-##App functionality
+## App functionality
 
 There are multiple routes accessible from the application:
 */* - The home page
@@ -61,9 +61,9 @@ Here are the assumptions I made about the app functionalities:
  - User can opt to view the app in another language (currently only supports English and Bahasa Indonesia).
 
 ----------
-##Design decisions
+## Design decisions
 
-###Page Layout
+### Page Layout
 I decided to not use a CSS framework and went with simple responsive CSS for the page. The app is divided into different sections.
 
 |	<span>				|  <span>				|
@@ -73,16 +73,38 @@ I decided to not use a CSS framework and went with simple responsive CSS for the
 |	Footer				|	<span>				|
 |	<span>				|	<span>				|
 
-SideContainer will disappear if the screen is too small.
+SideContainer will shift to the bottom, just below footer, if the screen size goes to tablet screen size.
 
-###In-memory Data
-I decided to use [Redux](github.com/reactjs/react-redux), coupled with [ImmutableJS](github.com/facebook/immutable-js) for predictability, for the data and state management.
+### In-memory Data
+I decided to use [Redux](https://github.com/reactjs/react-redux), coupled with [ImmutableJS](https://github.com/facebook/immutable-js) for predictability, for the data and state management.
 A *sampleDataManager.js* mocks a backend and stores all of the topics, and any request made by actions concerning topics (upvote/downvote, fetch, create) all go through this data manager.
 There is also a slight delay in each action that makes requests to the data manager, in order to mock the behavior of a real-world async request.
 
 The usage of ImmutableJS, as its name suggests, is to enforce immutability on our data. My decision was such that any data in between actions until components should be in ImmutableJS form. Meaning to say, any data fetched should be first converted to ImmutableJS data format, and passed around components as an ImmutableJS data format as well (with the exception of primitives).
 
-###Components Structure
+Even though this resulted in longer codes, it helps a lot in making sense of what data the reducers hold. Handling actions also become harder, as we cannot use ES6 spread operator most of the time, but it is worth implementing in my opinion.
+
+Let's go through each reducer quickly:
+
+#### appReducer
+The global state of our app. It store map of previously loaded topics, a loading flag, and error flag. Loading and error are not used in this app right now, but it can be used to display spinners or global error messages such as to warn users if their network is disconnected.
+
+A possible improvement here is to split the reducers into different reducers depending on the entities used in our application, which is **topics** in our case. That way, when the app scales, the *appReducer* is not cluttered.
+
+#### homePageReducer
+The reducer for home page (route "/"). Contains meta, and topicIds. The topicIds determine what items to display on the page.
+
+#### submitPageReducer
+The reducer for submit page. Stores the form state, loading and error. Loading and error are propagated to the rendered component to disable or enable interactions and provide information on errors.
+
+#### topicsPageReducer
+The reducer for topics page. Only contains the selected topic id to be rendered on the page.
+
+#### languageReducer
+The reducer that stores which locale the browser is currently using.
+
+
+### Components Structure
 I divided my React components into 2 distinct categories: *components* (dumb components) and *containers* (smart components).
 
 *Components* are mostly components that only care about what to display, without involving any logic or connection to our data stores.
@@ -104,26 +126,36 @@ A typical single containers folder content looks like this:
  - *reducers.js*: Reducers scoped to the container
  - *messages.js*: Messages defined for i18n
 
-###CSS
+### CSS
 I had a choice to use BEM structure, CSS modules, or styled-components.
 In the end, I decided to use [styled-components](https://github.com/styled-components/styled-components) and really liked it as they enable a clear separation of CSS and React components, resulting in code that are easier to read. Now we do not need to care about classnames anymore.
 
 You might notice that there is still css-loader package installed by create-react-app, and the webpack build config still processes any CSS file. These are still useful if we want to introduce an external CSS file to load to the project later on.
 
-####UI
+#### UI
 
 - */src/ui/global.js* - Global CSS injected at the entry point of the app
-- */src/ui/helpers.js* - Reusable CSS
+- */src/ui/helpers.js* - Reusable CSS and media query
 - */src/ui/theme.js* -  Global definitions for colors, margins, fontSizes
 
 
-###Internationalization
+### Internationalization
 I used [React-Intl](https://github.com/yahoo/react-intl) for i18n. There were some scripts from [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate) that are quite useful, so those scripts were copied and modified too. They are:
 
  - */src/language/extract-i18n.js*: Running this script extracts any message definition throughout the project and groups them inside */src/language/translations/LOCALE.json* . All default translations are put in the default locale file, for example en.json / id.json.
  - */src/language/i18n.js*: Initializes localeData into the browser and exports translations.
 
-###Testing
+### Testing
 Tests were written for most of the components, some utils, and the App actions and reducers.
-[Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://github.com/facebook/jest) are used for the tests. [jest-styled-components](https://github.com/styled-components) also help in testing components that are wrapped in a Styled Component, as well as snapshot testing for components.
+[Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://github.com/facebook/jest) are used for the tests. [jest-styled-components](https://github.com/styled-components) also helped in testing components that are wrapped in a Styled Component, as well as snapshot testing for components.
+[redux-mock-store](https://github.com/arnaudbenard/redux-mock-store) is used to mock stores when testing actions.
 Do note that some of the files do not have tests yet, especially *containers*, as such there are many improvements that can be done to make the tests more robust in the future.
+
+
+
+----------
+## Conclusion
+
+I tried many new libraries during this project and honestly had fun with it. React Router v4 introduced new concept that enables routes to be matched as components are rendered, and I find that really cool. I never used ImmutableJS in production before, but I think that it is probably the way to go in developing React apps with Redux. I did not manage to complete all the tests, but I would love to explore more on it in the future.
+
+There are still many things that can be improved upon!
