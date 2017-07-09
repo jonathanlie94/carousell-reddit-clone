@@ -79,7 +79,6 @@
     "test-watch": "node scripts/test.js --env=jsdom",
     "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma es5 --write '{src,__tests__}/**/*.js'",
     "extract-i18n": "NODE_ENV=development babel-node --presets latest,stage-0 -- ./src/language/extract-i18n.js",
-    "precommit": "lint-staged",
     "postinstall": "node scripts/build.js"
   },
   "jest": {
