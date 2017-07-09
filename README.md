@@ -172,14 +172,14 @@ I used [React-Intl](https://github.com/yahoo/react-intl) for i18n. There were so
 Tests were written for most of the components, some utils, and the App actions and reducers.
 [Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://github.com/facebook/jest) are used for the tests. [jest-styled-components](https://github.com/styled-components) also helped in testing components that are wrapped in a Styled Component, as well as snapshot testing for components. Check the tests out inside */tests* folder of each individual folder.
 [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store) is used to mock stores when testing actions.
-Do note that some of the files do not have tests yet, especially *containers*, as such there are many improvements that can be done to make the tests more robust in the future.
+Do note that some of the files do not have tests yet, but most components, actions/reducers, utils have been covered. There is certainly a huge room for improvement in this area.
 
 
 
 ----------
 ## Conclusion
 
-I tried many new libraries during this project and honestly had fun with it. React Router v4 introduced new concept that enables routes to be matched as components are rendered, and I find that really cool. I never used ImmutableJS in production before, but I think that it is probably the way to go in developing React apps with Redux. I did not manage to complete all the tests, but I would love to explore more on it in the future.
+I tried many new libraries during this project and honestly had fun with it. React Router v4 introduced new concept that enables routes to be matched as components are rendered, and I find that really cool. I never used ImmutableJS in production before, but I think that it is probably the way to go in developing React apps with Redux.
 
 Even though a nice webpage design is not needed, I feel that in order to showcase good practices on developing web apps in general, some degree of aesthetics and responsiveness is needed, which is why I took further steps to build a better looking website. It also proves how maintainable a code base is as it resembles a real-world app more closely in my opinion.
 
