@@ -11,7 +11,7 @@ exports[`<Banner /> should match previous snapshot 1`] = `
   position: relative;
 }
 
-.laDvvZ {
+.iEXxOJ {
   background-color: transparent;
   font-family: Overwatch;
   font-style: italic;
@@ -31,12 +31,18 @@ exports[`<Banner /> should match previous snapshot 1`] = `
   color: #666;
 }
 
+@media (max-width: 480px) {
+  .iEXxOJ {
+    font-size: 4rem;
+  }
+}
+
 <div
   className="sc-bdVaJa dKaCtQ"
 >
   <styled.span>
     <span
-      className="sc-bwzfXH laDvvZ"
+      className="sc-bwzfXH iEXxOJ"
     >
       REDDIT
       <styled.span>
