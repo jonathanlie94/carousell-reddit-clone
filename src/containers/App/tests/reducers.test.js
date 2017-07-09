@@ -31,9 +31,7 @@ describe('appReducer', () => {
           loading: true,
           error: false,
         }),
-        {
-          type: constants.LOAD_TOPICS,
-        }
+        {}
       )
     );
   });

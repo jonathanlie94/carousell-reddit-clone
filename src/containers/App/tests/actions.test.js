@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('actions', () => {
+describe('appActions', () => {
   it('should create an action to load topics', () => {
     const expectedAction = {
       type: constants.LOAD_TOPICS,
@@ -27,7 +27,13 @@ describe('actions', () => {
         orderedIds: data.get('orderedIds'),
       },
     ];
-    const store = mockStore({ topics: {} });
+    const store = mockStore(
+      fromJS({
+        app: {
+          topics: {},
+        },
+      })
+    );
 
     return store.dispatch(actions.requestFetchTopics()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
@@ -50,7 +56,13 @@ describe('actions', () => {
         topic: data,
       },
     ];
-    const store = mockStore({ topics: {} });
+    const store = mockStore(
+      fromJS({
+        app: {
+          topics: {},
+        },
+      })
+    );
 
     return store.dispatch(actions.requestFetchTopic(1)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
@@ -69,7 +81,13 @@ describe('actions', () => {
     // as the sampleDataManager updates the in-memory data immediately.
     sampleDataManager.downvote(1);
 
-    const store = mockStore({ topics: {} });
+    const store = mockStore(
+      fromJS({
+        app: {
+          topics: {},
+        },
+      })
+    );
 
     return store.dispatch(actions.requestUpvoteTopic(1)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
@@ -87,7 +105,13 @@ describe('actions', () => {
     // Upvote it first to return the value back before downvoting it back again,
     // as the sampleDataManager updates the in-memory data immediately.
     sampleDataManager.upvote(1);
-    const store = mockStore({ topics: {} });
+    const store = mockStore(
+      fromJS({
+        app: {
+          topics: {},
+        },
+      })
+    );
 
     return store.dispatch(actions.requestDownvoteTopic(1)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
