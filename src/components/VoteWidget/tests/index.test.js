@@ -20,7 +20,7 @@ describe('<VoteWidget />', () => {
     expect(count).toEqual(3);
   });
 
-  it('should handle upvote correctly', () => {
+  it('should handle downvote correctly', () => {
     let count = 2;
     const onDownvote = v => {
       count --;
