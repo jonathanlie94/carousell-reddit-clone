@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { translationMessages } from 'language/i18n';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './containers/App';
-import registerServiceWorker from './registerServiceWorker';
 
 const render = messages =>
   ReactDOM.render(
@@ -40,5 +39,3 @@ if (!window.Intl) {
 } else {
   render(translationMessages);
 }
-
-registerServiceWorker();
