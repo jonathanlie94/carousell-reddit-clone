@@ -8,7 +8,7 @@ import {
 import { create } from 'utils/sampleDataManager';
 import { fromJS } from 'immutable';
 
-const FAKE_TIMEOUT = 500;
+const SUBMIT_DELAY = 500;
 
 export function resetForm() {
   return {
@@ -31,19 +31,19 @@ export function createTopic() {
 
 export function requestCreateTopic(form) {
   return (dispatch, getState) => {
-    return new Promise((res, rej) => {
+    return new Promise((resolve, reject) => {
       dispatch(createTopic());
       const form = getState().get('submitPage').get('form').toJS();
       setTimeout(() => {
         const errorMessage = create(form);
         if (!errorMessage) {
           dispatch(topicCreated());
-          res();
+          resolve();
         } else {
           dispatch(topicCreatedError(fromJS(errorMessage)));
-          rej();
+          reject();
         }
-      }, FAKE_TIMEOUT);
+      }, SUBMIT_DELAY);
     });
   };
 }

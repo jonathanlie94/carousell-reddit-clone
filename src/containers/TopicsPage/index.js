@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTopic } from 'containers/App/actions';
+import { requestFetchTopic } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
 import {
   ScrollToTopOnMount,
@@ -30,7 +30,7 @@ const StyledListItem = styled(ListItem)`
 
 class TopicsPage extends Component {
   componentDidMount() {
-    this.props.fetchTopic(Number(this.props.match.params.id));
+    this.props.requestFetchTopic(Number(this.props.match.params.id));
     this.props.selectTopic(Number(this.props.match.params.id));
   }
 
@@ -73,7 +73,7 @@ class TopicsPage extends Component {
 TopicsPage.propTypes = {
   topic: PropTypes.instanceOf(Map),
   selectTopic: PropTypes.func,
-  fetchTopic: PropTypes.func,
+  requestFetchTopic: PropTypes.func,
   upvoteTopi: PropTypes.func,
   downoteTopi: PropTypes.func,
 };
@@ -89,7 +89,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => ({
   selectTopic: id => dispatch(selectTopic(id)),
-  fetchTopic: id => dispatch(fetchTopic(id)),
+  requestFetchTopic: id => dispatch(requestFetchTopic(id)),
   upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
   downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
 });

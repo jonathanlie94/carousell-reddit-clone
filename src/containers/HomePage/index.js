@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchTopics } from 'containers/App/actions';
+import { requestFetchTopics } from 'containers/App/actions';
 import { withRouter } from 'react-router-dom';
 import { List } from 'immutable';
 import SideSubmit from 'containers/SideSubmit';
@@ -42,7 +42,7 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchTopics();
+    this.props.requestFetchTopics();
   }
 
   render() {
@@ -94,7 +94,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTopics: () => dispatch(fetchTopics()),
+    requestFetchTopics: () => dispatch(requestFetchTopics()),
     upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
     downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
     incrementPage: () => dispatch(incrementPage()),

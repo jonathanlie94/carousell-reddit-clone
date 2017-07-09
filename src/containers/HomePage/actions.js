@@ -1,5 +1,5 @@
 import { INCREMENT_PAGE, DECREMENT_PAGE } from './constants';
-import { fetchTopics } from 'containers/App/actions';
+import { requestFetchTopics } from 'containers/App/actions';
 
 export function incrementPageLocal() {
   return {
@@ -11,7 +11,7 @@ export function incrementPage() {
   return (dispatch, getState) => {
     const page = getState().get('homePage').get('meta').get('page') + 1;
     dispatch(incrementPageLocal());
-    dispatch(fetchTopics(page));
+    dispatch(requestFetchTopics(page));
   };
 }
 
@@ -25,6 +25,6 @@ export function decrementPage() {
   return (dispatch, getState) => {
     const page = getState().get('homePage').get('meta').get('page') - 1;
     dispatch(decrementPageLocal());
-    dispatch(fetchTopics(page));
+    dispatch(requestFetchTopics(page));
   };
 }

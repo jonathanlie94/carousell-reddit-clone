@@ -3,7 +3,6 @@ import { fromJS } from 'immutable';
 import {
   LOAD_TOPICS,
   LOAD_TOPICS_SUCCESS,
-  LOAD_TOPICS_ERROR,
   LOAD_TOPIC,
   LOAD_TOPIC_SUCCESS,
   LOAD_TOPIC_ERROR,
@@ -38,8 +37,6 @@ function appReducer(state = initialState, action) {
         .set('topics', action.topics.merge(state.get('topics')))
         .set('loading', false)
         .set('error', false);
-    case LOAD_TOPICS_ERROR:
-      return state.set('error', action.error).set('loading', false);
     case UPVOTE_TOPIC:
     case DOWNVOTE_TOPIC:
     case LOAD_TOPIC_SUCCESS:
