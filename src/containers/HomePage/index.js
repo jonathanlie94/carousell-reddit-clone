@@ -21,7 +21,7 @@ import {
   requestUpvoteTopic,
   requestDownvoteTopic,
 } from 'containers/App/actions';
-import { incrementPage, decrementPage } from './actions';
+import { incrementPage, decrementPage, resetPage } from './actions';
 
 const StyledListItem = styled(ListItem)`
   display: flex;
@@ -43,6 +43,10 @@ class HomePage extends Component {
 
   componentWillMount() {
     this.props.requestFetchTopics();
+  }
+
+  componentWillUnmount() {
+    this.props.resetPage();
   }
 
   render() {
@@ -97,6 +101,7 @@ const mapDispatchToProps = dispatch => {
     requestFetchTopics: () => dispatch(requestFetchTopics()),
     upvoteTopic: id => dispatch(requestUpvoteTopic(id)),
     downvoteTopic: id => dispatch(requestDownvoteTopic(id)),
+    resetPage: () => dispatch(resetPage()),
     incrementPage: () => dispatch(incrementPage()),
     decrementPage: () => dispatch(decrementPage()),
   };

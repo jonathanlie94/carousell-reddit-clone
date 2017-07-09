@@ -1,6 +1,6 @@
 import { fromJS, List } from 'immutable';
 
-import { INCREMENT_PAGE, DECREMENT_PAGE } from './constants';
+import { INCREMENT_PAGE, DECREMENT_PAGE, RESET_PAGE } from './constants';
 
 import { LOAD_TOPICS_SUCCESS } from 'containers/App/constants';
 
@@ -15,6 +15,13 @@ const initialState = fromJS({
 
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
+    case RESET_PAGE:
+      return state
+        .mergeIn(
+          ['meta'],
+          state.get('meta').set('page', 1)
+        )
+        .set('topicIds', List([]));
     case INCREMENT_PAGE:
       return state
         .mergeIn(
