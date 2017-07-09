@@ -11,7 +11,7 @@ exports[`<Banner /> should match previous snapshot 1`] = `
   position: relative;
 }
 
-.iEXxOJ {
+.fPPTTC {
   background-color: transparent;
   font-family: Overwatch;
   font-style: italic;
@@ -25,6 +25,15 @@ exports[`<Banner /> should match previous snapshot 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-left: 2rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .dEhpst {
@@ -32,7 +41,7 @@ exports[`<Banner /> should match previous snapshot 1`] = `
 }
 
 @media (max-width: 480px) {
-  .iEXxOJ {
+  .fPPTTC {
     font-size: 4rem;
   }
 }
@@ -42,7 +51,7 @@ exports[`<Banner /> should match previous snapshot 1`] = `
 >
   <styled.span>
     <span
-      className="sc-bwzfXH iEXxOJ"
+      className="sc-bwzfXH fPPTTC"
     >
       REDDIT
       <styled.span>
