@@ -121,11 +121,5 @@
   },
   "engines": {
     "node": "6.11.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
